@@ -1,0 +1,10 @@
+{
+  "baseline_median_req_nm": 5535.574064910412,
+  "fully_observed_pct": 85.6592091553301,
+  "nodes": "nodes.csv",
+  "sets": 398,
+  "sets_file": "port_sets.csv",
+  "ship_years_active": 154465,
+  "slow_as_break": false,
+  "weighted": "co2"
+}

@@ -1,0 +1,48 @@
+shiptype_group,n_fit,fit_median_ratio,factor,fitted_on
+"Bulk Carrier-7,500-9,999dwt",31,0.7258325106129014,1.3777283124940054,voyages_routed.csv.gz
+Bulk Carrier-Capesize,338,0.8547286727252774,1.1699619211457235,voyages_routed.csv.gz
+Bulk Carrier-Handymax,167,0.8746259083506738,1.1433459613444912,voyages_routed.csv.gz
+Bulk Carrier-Large Handy,1579,0.8693537060669946,1.1502797917823997,voyages_routed.csv.gz
+Bulk Carrier-Mini Capesize,58,0.7003515584572464,1.4278543224817368,voyages_routed.csv.gz
+Bulk Carrier-Newcastlemax,65,0.8363412355165769,1.1956841986660351,voyages_routed.csv.gz
+Bulk Carrier-Pmax/Kamsarmax,1137,0.8639624564405052,1.1574577026413448,voyages_routed.csv.gz
+Bulk Carrier-Post Panamax,122,0.7937317809718067,1.2598714376481794,voyages_routed.csv.gz
+Bulk Carrier-Small Handy,168,0.7860923527931925,1.272115161083475,voyages_routed.csv.gz
+Bulk Carrier-Supra/Ultramax,1770,0.8867835510548495,1.127670894222696,voyages_routed.csv.gz
+Containership-Feedermax,275,0.6971154800544618,1.434482562231835,voyages_routed.csv.gz
+Containership-Mega Container,134,1.1732877243833042,0.8523058574789176,voyages_routed.csv.gz
+Containership-New Panamax,166,0.7567864337771606,1.3213767522350366,voyages_routed.csv.gz
+Containership-Panamax,247,0.7741448733855237,1.2917478812806147,voyages_routed.csv.gz
+Containership-Post-Panamax,544,0.8027027878067892,1.2457911137100726,voyages_routed.csv.gz
+Containership-Regional Feeder,372,0.609464537892916,1.6407845540238828,voyages_routed.csv.gz
+Containership-Small Feeder,260,0.6511944618515595,1.5356395955160183,voyages_routed.csv.gz
+Containership-Sub New Panamax,73,0.8341006562736617,1.1988960714495687,voyages_routed.csv.gz
+Containership-Sub-Panamax,91,0.8115027037258964,1.232281784655363,voyages_routed.csv.gz
+Containership-ULCS,131,0.8780862659385806,1.1388402697895594,voyages_routed.csv.gz
+"General Cargo 10,000-14,999dwt",433,0.759474147472754,1.3167005135429903,voyages_routed.csv.gz
+"General Cargo 15,000-19,999dwt",161,0.7996374210895804,1.250566786428538,voyages_routed.csv.gz
+"General Cargo 20,000-29,999dwt",111,0.6829791607259281,1.46417351729607,voyages_routed.csv.gz
+"General Cargo 5,000-9,999 dwt",518,0.6996275026386607,1.429332032014862,voyages_routed.csv.gz
+"General Cargo =>30,000dwt",102,0.7486167586143908,1.3357969728742014,voyages_routed.csv.gz
+LNG-Conventional Gas Carrier,69,0.2985833823489255,3.3491482082261252,voyages_routed.csv.gz
+LNG-New Panamax,403,0.7960669903393482,1.256175688899899,voyages_routed.csv.gz
+LNG-Q Flex,57,0.3820403733846205,2.6175244023051105,voyages_routed.csv.gz
+LPG-Large Gas Carrier,27,0.8098865149916473,1.234740894544112,voyages_routed.csv.gz
+LPG-Medium Gas Carrier,160,0.7833801334032939,1.2765194793179513,voyages_routed.csv.gz
+LPG-Small Gas Carrier,192,0.6349506617767489,1.5749255181524702,voyages_routed.csv.gz
+LPG-Very Large Gas Carrier,113,0.9445394797582894,1.0587169953509017,voyages_routed.csv.gz
+"PCC/PCTC 2,000-2,999 cars",26,0.713984834880751,1.4005899721483845,voyages_routed.csv.gz
+"PCC/PCTC 3,000-3,999 cars",37,0.7067695428067623,1.4148883609623932,voyages_routed.csv.gz
+"PCC/PCTC => 4,000 cars",643,0.6192823509177141,1.6147723223794457,voyages_routed.csv.gz
+"Reefer-5,000-7,999dwt",46,0.701162955299842,1.4262019869152454,voyages_routed.csv.gz
+"Reefer-=>8,000dwt",157,0.9098577577004962,1.099072895226307,voyages_routed.csv.gz
+"Tanker-7,500-9,999dwt",168,0.6306798897937622,1.5855904337254334,voyages_routed.csv.gz
+Tanker-Aframax,439,0.7293224058507246,1.3711357171778387,voyages_routed.csv.gz
+Tanker-Handy,790,0.6573746672618681,1.5212025193566603,voyages_routed.csv.gz
+Tanker-LR1,216,0.8529089177541596,1.1724581361315272,voyages_routed.csv.gz
+Tanker-LR2,334,0.7840412302099298,1.2754431290969819,voyages_routed.csv.gz
+Tanker-MR1,488,0.6840608617255279,1.4618582292188487,voyages_routed.csv.gz
+Tanker-MR2,1081,0.7803702202804,1.2814430561441508,voyages_routed.csv.gz
+Tanker-Suezmax,514,0.8319499381818403,1.2019954015327168,voyages_routed.csv.gz
+Tanker-VLCC,180,1.030711672277064,0.9702034302093279,voyages_routed.csv.gz
+__global__,15289,0.774066381993198,1.2918788662866738

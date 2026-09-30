@@ -1,0 +1,14 @@
+{
+  "audited": 293,
+  "concurrent_other_visit_pct": 1.231160923326182,
+  "main_not_among_identities_pct": 0.0,
+  "main_window_share_median": 0.7807913209955328,
+  "missing_visit_pct": 31.54816483134965,
+  "multi_identity_pct": 67.91808873720136,
+  "other_identity_with_visits_pct": 56.31399317406143,
+  "sampled": 300,
+  "sequential_missing_visit_pct": 30.694907616043263,
+  "ships_main_window_under_half": 104,
+  "ships_missing_over_10pct": 146,
+  "ships_sequential_over_10pct": 140
+}

@@ -1,0 +1,44 @@
+set_id,hub,anchorage_id,source
+yap4,CNSHA,chn-shanghai,Yap2026 Fig9
+yap4,CNSHA,chn-yangshan,Yap2026 Fig9
+yap4,BEANR,bel-antwerp,Yap2026 Fig9
+yap4,SGSIN,sgp-singapore,Yap2026 Fig9
+yap4,USNYC,usa-newyork,Yap2026 Fig9
+yap8,CNSHA,chn-shanghai,Yap2026 Fig9
+yap8,CNSHA,chn-yangshan,Yap2026 Fig9
+yap8,BEANR,bel-antwerp,Yap2026 Fig9
+yap8,SGSIN,sgp-singapore,Yap2026 Fig9
+yap8,USNYC,usa-newyork,Yap2026 Fig9
+yap8,KRPUS,kor-busan,Yap2026 Fig9
+yap8,KRPUS,kor-busannewport,Yap2026 Fig9
+yap8,CNNGB,chn-ningbo,Yap2026 Fig9
+yap8,CNNGB,chn-zhoushan,Yap2026 Fig9
+yap8,ESVLC,esp-valencia,Yap2026 Fig9
+yap8,INMUN,ind-mundra,Yap2026 Fig9
+
+bunker10,SGSIN,sgp-singapore,IPEC2025 top-10 bunker sales 2024
+bunker10,NLRTM,nld-rotterdammaasvlakte,IPEC2025 top-10 bunker sales 2024
+bunker10,NLRTM,nld-rotterdam,IPEC2025 top-10 bunker sales 2024
+bunker10,AEFJR,are-fujairah,IPEC2025 top-10 bunker sales 2024
+bunker10,CNZOS,chn-zhoushan,IPEC2025 top-10 bunker sales 2024
+bunker10,CNZOS,chn-zhoushananchorage,IPEC2025 top-10 bunker sales 2024
+bunker10,BEANR,bel-antwerp,IPEC2025 top-10 bunker sales 2024
+bunker10,BEANR,bel-zeebrugge,IPEC2025 top-10 bunker sales 2024
+bunker10,KRPUS,kor-busan,IPEC2025 top-10 bunker sales 2024
+bunker10,KRPUS,kor-busannewport,IPEC2025 top-10 bunker sales 2024
+bunker10,HKHKG,chn-hongkong,IPEC2025 top-10 bunker sales 2024
+bunker10,PAPTY,pan-balboa,IPEC2025 top-10 bunker sales 2024
+bunker10,PAPTY,pan-cristobal,IPEC2025 top-10 bunker sales 2024
+bunker10,PAPTY,pan-colon,IPEC2025 top-10 bunker sales 2024
+bunker10,GIGIB,gib-gibraltar,IPEC2025 top-10 bunker sales 2024
+bunker10,CNSHA,chn-shanghai,IPEC2025 top-10 bunker sales 2024
+bunker10,CNSHA,chn-yangshan,IPEC2025 top-10 bunker sales 2024
+
+methanol6,BEANR,bel-antwerp,DNV Methanol fuel in shipping (2025-12) named ports
+methanol6,NLRTM,nld-rotterdammaasvlakte,DNV Methanol fuel in shipping (2025-12) named ports
+methanol6,NLRTM,nld-rotterdam,DNV Methanol fuel in shipping (2025-12) named ports
+methanol6,CNSHA,chn-shanghai,DNV Methanol fuel in shipping (2025-12) named ports
+methanol6,CNSHA,chn-yangshan,DNV Methanol fuel in shipping (2025-12) named ports
+methanol6,KRUSN,kor-ulsan,DNV Methanol fuel in shipping (2025-12) named ports
+methanol6,SGSIN,sgp-singapore,DNV Methanol fuel in shipping (2025-12) named ports
+methanol6,SEGOT,swe-goteborg,DNV Methanol fuel in shipping (2025-12) named ports

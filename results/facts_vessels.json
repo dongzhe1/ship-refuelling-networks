@@ -1,0 +1,13 @@
+{
+  "fuel_capacity_pct": 86.9060773480663,
+  "n_bulk": 10415,
+  "n_container": 4485,
+  "n_gas": 1355,
+  "n_general": 2946,
+  "n_other": 0,
+  "n_passenger": 0,
+  "n_roro": 794,
+  "n_tanker": 7155,
+  "vessels_in_stops": 27150,
+  "vessels_matched": 27150
+}

@@ -1,0 +1,14 @@
+{
+  "gap1_lost_pct": 38.422541853336476,
+  "gap2_lost_pct": 50.137701116103784,
+  "gap3_lost_pct": 55.75624885969713,
+  "gap4_lost_pct": 59.354525600582384,
+  "gap5_lost_pct": 62.021136063408186,
+  "gap6_lost_pct": 65.96417281348789,
+  "gap7_lost_pct": 69.21487603305785,
+  "headline_excess_over_gap1_pp": 24.050576426233416,
+  "headline_indep_pct": 82.05581531814035,
+  "headline_lost_pct": 62.473118279569896,
+  "headline_n": 930,
+  "train_gap1_lost_pct": 44.674250258531536
+}

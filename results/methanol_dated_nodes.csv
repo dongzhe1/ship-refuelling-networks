@@ -1,0 +1,50 @@
+node_id,port,available_from,certain_by,variant
+bel-antwerp,Antwerp-Bruges,2023-06-01,2023-06-01,all
+chn-caofeidian,Tianjin,2025-09-22,2025-09-22,all
+chn-dalian,Dalian,2025-07-01,2025-07-31,all
+chn-guangzhou,Guangzhou,2026-09-01,2026-09-30,all
+chn-hongkong,Hong Kong,2026-03-05,2026-03-05,all
+chn-ningbo,Ningbo (Meishan),2026-04-22,2026-04-22,all
+chn-qingdao,Qingdao,2025-08-14,2025-08-14,all
+chn-yangpu,Yangpu (Hainan),2025-07-02,2025-07-02,all
+chn-yangshan,Shanghai (Yangshan),2024-04-01,2024-04-30,all
+chn-yantian,Shenzhen (Yantian),2026-01-21,2026-01-21,all
+chn-zhoushan,Zhoushan (Tsuneishi shipyard),2026-06-27,2026-06-27,all
+deu-bremerhaven,Bremerhaven,2025-03-01,2025-03-01,all
+deu-kiel,Kiel,2026-09-01,2026-09-01,all
+egy-portsaid,East Port Said,2023-08-15,2023-08-15,all
+gbr-immingham,Immingham,2026-02-01,2026-02-28,all
+hkg-hongkong,Hong Kong,2026-03-05,2026-03-05,all
+ind-kandla,Kandla (Deendayal),2026-04-02,2026-04-02,all
+jpn-yokohama,Yokohama,2026-02-01,2026-02-28,all
+kor-busan,Busan New Port,2024-10-04,2024-10-04,all
+kor-ulsan,Ulsan,2023-07-01,2023-07-31,all
+mys-tanjungpelepas,Tanjung Pelepas,2024-11-01,2024-11-30,all
+nld-rotterdam,Rotterdam,2021-05-11,2021-05-11,all
+nld-rotterdammaasvlakte,Rotterdam,2021-05-11,2021-05-11,all
+sgp-singapore,Singapore,2023-07-27,2023-07-27,all
+swe-goteborg,Gothenburg,2015-01-01,2015-12-31,all
+usa-houston,Houston,2023-04-01,2023-04-30,all
+usa-savannah,Savannah,2024-02-29,2024-02-29,all
+bel-antwerp,Antwerp-Bruges,2023-06-01,2023-06-01,strict
+chn-caofeidian,Tianjin,2025-09-22,2025-09-22,strict
+chn-dalian,Dalian,2025-07-01,2025-07-31,strict
+chn-hongkong,Hong Kong,2026-03-05,2026-03-05,strict
+chn-ningbo,Ningbo (Meishan),2026-04-22,2026-04-22,strict
+chn-qingdao,Qingdao,2025-08-14,2025-08-14,strict
+chn-yangpu,Yangpu (Hainan),2025-07-02,2025-07-02,strict
+chn-yangshan,Shanghai (Yangshan),2024-04-01,2024-04-30,strict
+chn-yantian,Shenzhen (Yantian),2026-01-21,2026-01-21,strict
+chn-zhoushan,Zhoushan (Tsuneishi shipyard),2026-06-27,2026-06-27,strict
+egy-portsaid,East Port Said,2023-08-15,2023-08-15,strict
+hkg-hongkong,Hong Kong,2026-03-05,2026-03-05,strict
+jpn-yokohama,Yokohama,2026-02-01,2026-02-28,strict
+kor-busan,Busan New Port,2024-10-04,2024-10-04,strict
+kor-ulsan,Ulsan,2023-07-01,2023-07-31,strict
+mys-tanjungpelepas,Tanjung Pelepas,2024-11-01,2024-11-30,strict
+nld-rotterdam,Rotterdam,2021-05-11,2021-05-11,strict
+nld-rotterdammaasvlakte,Rotterdam,2021-05-11,2021-05-11,strict
+sgp-singapore,Singapore,2023-07-27,2023-07-27,strict
+swe-goteborg,Gothenburg,2015-01-01,2015-12-31,strict
+usa-houston,Houston,2023-04-01,2023-04-30,strict
+usa-savannah,Savannah,2024-02-29,2024-02-29,strict

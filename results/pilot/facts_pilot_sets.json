@@ -1,0 +1,11 @@
+{
+  "external_sets": 4,
+  "nmax": 20,
+  "rankings": 8,
+  "sets": 12,
+  "ships_listed": 19,
+  "ships_with_stops": 19,
+  "stops": 1932,
+  "stops_without_node_pct": 0.051759834368530024,
+  "train_years": "2019,2024"
+}

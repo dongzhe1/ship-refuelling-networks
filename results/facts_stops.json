@@ -1,0 +1,20 @@
+{
+  "anchorages": 5450,
+  "dropped_duplicate": 256,
+  "dropped_duration": 0,
+  "dropped_low_confidence": 0,
+  "dropped_unparseable": 0,
+  "legs": 7866118,
+  "legs_break_gap": 8204,
+  "legs_break_speed": 29337,
+  "legs_ok": 7828577,
+  "legs_route_detour": 65949,
+  "legs_route_too_fast": 173472,
+  "legs_routed_pct": 77.95912799680859,
+  "legs_slow": 214558,
+  "median_leg_nm": 420.9248668128332,
+  "rows_read": 7893524,
+  "stops_at_transit_pct": 2.294778284482422,
+  "vessels": 27150,
+  "visits": 7893268
+}
