@@ -17,8 +17,9 @@ import urllib.request
 from pathlib import Path
 
 BASE = "https://gateway.api.globalfishingwatch.org/v3"
-IDENTITY_DS = "public-global-vessel-identity:latest"
-PORTVISIT_DS = "public-global-port-visits-events:latest"
+GFW_VERSION = "v4.0"
+IDENTITY_DS = f"public-global-vessel-identity:{GFW_VERSION}"
+PORTVISIT_DS = f"public-global-port-visits-events:{GFW_VERSION}"
 DEFAULT_START = "2023-01-01"
 PAGE = 500
 SHARD_ROWS = 500_000
@@ -29,6 +30,10 @@ PAUSE = 0.12
 USER_AGENT = "port-visit-extraction/1.0 (academic research; GFW API v3)"
 SEARCH_LIMIT = 20
 OVERLAP_DAYS = 7
+OUTAGE_WAITS = (300, 900, 1800, 3600, 3600, 3600, 3600, 3600, 3600)
+DAILY_BUDGET = 45_000
+LEDGER_FILE = Path(os.environ.get("GFW_REQUEST_LEDGER", "~/.gfw_requests.log"))
+LEDGER_RELOAD = 200
 
 MIN_CONFIDENCE = 3
 MAX_DURATION_HRS = 24 * 30
@@ -90,6 +95,70 @@ def read_imos(path: Path) -> list[str]:
     return list(dict.fromkeys(out))
 
 
+class Ledger:
+
+    def __init__(self, path: Path = LEDGER_FILE, budget: int = DAILY_BUDGET,
+                 on_budget: str = "wait"):
+        self.path, self.budget, self.on_budget = Path(path).expanduser(), budget, on_budget
+        self.times: collections.deque = collections.deque()
+        self.since_reload, self.loaded = 0, False
+
+    def reload(self) -> None:
+        cut, ts = time.time() - 86400, []
+        if self.path.exists():
+            with self.path.open() as f:
+                for line in f:
+                    try:
+                        t = float(line.split()[0])
+                    except (ValueError, IndexError):
+                        continue
+                    if t > cut:
+                        ts.append(t)
+        self.times = collections.deque(sorted(ts))
+        self.since_reload, self.loaded = 0, True
+
+    def count(self) -> int:
+        if not self.loaded or self.since_reload >= LEDGER_RELOAD:
+            self.reload()
+        cut = time.time() - 86400
+        while self.times and self.times[0] <= cut:
+            self.times.popleft()
+        return len(self.times)
+
+    def acquire(self) -> None:
+        if self.budget <= 0:
+            return
+        while (n := self.count()) >= self.budget:
+            free_at = self.times[n - self.budget] + 86400 + 60
+            when = dt.datetime.fromtimestamp(free_at).strftime("%Y-%m-%d %H:%M")
+            if self.on_budget == "stop":
+                raise SystemExit(f"daily budget reached: {n:,} requests in the last 24 h "
+                                 f"(budget {self.budget:,}). Progress is checkpointed; "
+                                 f"rerun after {when}.")
+            log(f"  daily budget reached ({n:,} requests in 24 h); pausing until {when}")
+            while time.time() < free_at:
+                time.sleep(min(3600.0, max(1.0, free_at - time.time())))
+            self.reload()
+
+    def record(self) -> None:
+        t = time.time()
+        with self.path.open("a") as f:
+            f.write(f"{t:.3f}\n")
+        self.times.append(t)
+        self.since_reload += 1
+
+
+LEDGER = Ledger()
+ON_429 = "stop"
+
+
+class ApiClientError(SystemExit):
+
+    def __init__(self, msg: str, detail=None):
+        super().__init__(msg)
+        self.detail = detail
+
+
 _consec_429 = [0]
 
 
@@ -99,6 +168,8 @@ def api_get(token: str, path: str, params: list[tuple[str, str]]) -> dict | None
         url, headers={"Authorization": "Bearer " + token, "User-Agent": USER_AGENT})
     delay = BASE_BACKOFF
     for attempt in range(1, MAX_RETRIES + 1):
+        LEDGER.acquire()
+        LEDGER.record()
         try:
             with urllib.request.urlopen(req, timeout=180) as r:
                 d = json.load(r)
@@ -114,7 +185,8 @@ def api_get(token: str, path: str, params: list[tuple[str, str]]) -> dict | None
                     detail = json.loads(exc.read().decode())
                 except Exception:
                     detail = {}
-                raise SystemExit(f"422 from {path}: {detail.get('messages') or detail}\n  {url}")
+                raise ApiClientError(f"422 from {path}: {detail.get('messages') or detail}\n  {url}",
+                                     detail.get("messages") or detail)
             if code == 429:
                 _consec_429[0] += 1
                 if _consec_429[0] == 1:
@@ -122,6 +194,11 @@ def api_get(token: str, path: str, params: list[tuple[str, str]]) -> dict | None
                         log(f"  429 body: {exc.read().decode()[:400]}")
                     except Exception:
                         pass
+                if ON_429 == "stop":
+                    raise SystemExit(
+                        "429 from the API: the quota is probably exhausted, and the account "
+                        "may stay locked for up to 48 h. Progress is checkpointed; rerun "
+                        "later. (--on-429 retry restores the old waiting behaviour.)")
                 if _consec_429[0] > MAX_429_SLEEPS:
                     raise SystemExit(
                         f"429 for {MAX_429_SLEEPS * 15} min straight -- a disabled token or a "
@@ -337,6 +414,7 @@ def window(start: str | None, end: str | None, ckpt: dict) -> tuple[str, str]:
 
 
 def main(argv=None):
+    global LEDGER, ON_429, PORTVISIT_DS, IDENTITY_DS
     ap = argparse.ArgumentParser()
     ap.add_argument("work_dir", type=Path)
     ap.add_argument("--imos", type=Path, default=None,
@@ -347,10 +425,31 @@ def main(argv=None):
     ap.add_argument("--end", default=None,
                     help="YYYY-MM-DD, exclusive; default today, or the checkpoint's")
     ap.add_argument("--token-file", type=Path, default=None, help="default ~/.gfw_token")
+    ap.add_argument("--daily-budget", type=int, default=DAILY_BUDGET,
+                    help=f"requests per rolling 24 h (default {DAILY_BUDGET:,}; 0 = no limit)")
+    ap.add_argument("--ledger", type=Path, default=LEDGER_FILE,
+                    help="request log shared by all pulls on the account (default %(default)s)")
+    ap.add_argument("--on-budget", choices=["wait", "stop"], default="wait",
+                    help="at the budget: pause until it frees (default) or exit")
+    ap.add_argument("--gfw-version", default=GFW_VERSION,
+                    help="dataset version for identity and events (default %(default)s; "
+                         "v5.0 is GFW's default from 2026-10-21)")
+    ap.add_argument("--events-dataset", default=None,
+                    help=f"port-visit events dataset (default {PORTVISIT_DS}); a different "
+                         "one goes into a new work_dir, so two versions are never mixed")
+    ap.add_argument("--on-429", choices=["stop", "retry"], default="stop",
+                    help="on a 429 reply: exit at once (default) or wait and retry")
     ap.add_argument("--identities", choices=["first", "all"], default=None,
                     help="AIS identities per IMO: the first match (the rule, "
                          "default) or all that report the IMO; default: the checkpoint's")
     a = ap.parse_args(argv)
+    IDENTITY_DS = f"public-global-vessel-identity:{a.gfw_version}"
+    PORTVISIT_DS = a.events_dataset or f"public-global-port-visits-events:{a.gfw_version}"
+    log(f"datasets: {IDENTITY_DS}, {PORTVISIT_DS}")
+    LEDGER = Ledger(a.ledger, a.daily_budget, a.on_budget)
+    ON_429 = a.on_429
+    log(f"request ledger {LEDGER.path}: {LEDGER.count():,} requests in the last 24 h, "
+        f"budget {a.daily_budget:,} ({'pause' if a.on_budget == 'wait' else 'exit'} at it)")
     work = a.work_dir.expanduser().resolve()
     work.mkdir(parents=True, exist_ok=True)
     ckpt = work / "checkpoint.json"
@@ -361,9 +460,16 @@ def main(argv=None):
     if old_mode and mode != old_mode:
         sys.exit(f"checkpoint.json was written with --identities {old_mode}; use a new "
                  f"work_dir rather than mixing two identity rules in one")
+    old_ds = (c.get("identity_dataset", "public-global-vessel-identity:v4.0"),
+              c.get("events_dataset", "public-global-port-visits-events:v4.0")) if c else None
+    if old_ds and old_ds != (IDENTITY_DS, PORTVISIT_DS):
+        sys.exit(f"checkpoint.json was written for {old_ds[0]} / {old_ds[1]}; use a new "
+                 f"work_dir rather than mixing two dataset versions in one")
     if not c:
         ckpt.write_text(json.dumps({"done_imos": [], "shard_index": 0, "written": 0,
-                                    "start": start, "end": end, "identities": mode}))
+                                    "start": start, "end": end, "identities": mode,
+                                    "identity_dataset": IDENTITY_DS,
+                                    "events_dataset": PORTVISIT_DS}))
     imo_path = a.imos or work / "imos.txt"
     if not imo_path.exists():
         sys.exit(f"{imo_path} not found (one IMO per line, or a CSV with an imo column)")
@@ -382,16 +488,71 @@ def main(argv=None):
 
     writer = ShardWriter(work, shard_index)
     dropped = collections.Counter()
+    skip_file = work / "skipped_vessel_ids.csv"
+    last_good: str | None = next((ids[i].split(";")[0] for i in sorted(done) if i in ids), None)
+    all_rejected_run = 0
+
+    def events_ok(vid: str) -> bool:
+        try:
+            api_get(token, "events", [("datasets[0]", PORTVISIT_DS), ("vessels[0]", vid),
+                                      ("start-date", start), ("end-date", end),
+                                      ("limit", "1"), ("offset", "0")])
+            return True
+        except ApiClientError:
+            return False
+
     pending = [i for i in imos if i in ids and i not in done]
     log(f"pulling port visits for {len(pending):,} vessels")
     try:
         for n, imo in enumerate(pending, 1):
-            offset, failed, rows_v = 0, False, 0
+            offset, failed, rows_v, accepted = 0, False, 0, False
+            vids = ids[imo].split(";")
             while True:
-                vessels = [(f"vessels[{k}]", v) for k, v in enumerate(ids[imo].split(";"))]
-                d = api_get(token, "events", [("datasets[0]", PORTVISIT_DS), *vessels,
-                    ("start-date", start), ("end-date", end),
-                    ("limit", str(PAGE)), ("offset", str(offset))])
+                vessels = [(f"vessels[{k}]", v) for k, v in enumerate(vids)]
+                try:
+                    d = api_get(token, "events", [("datasets[0]", PORTVISIT_DS), *vessels,
+                        ("start-date", start), ("end-date", end),
+                        ("limit", str(PAGE)), ("offset", str(offset))])
+                except ApiClientError as exc:
+                    if last_good is not None and not events_ok(last_good):
+                        for w_ in OUTAGE_WAITS:
+                            log(f"  events dataset rejects a vessel id it took before "
+                                f"({exc.detail}); rechecking in {w_ // 60} min")
+                            time.sleep(w_)
+                            if events_ok(last_good):
+                                log("  events dataset answering again; carrying on")
+                                break
+                        else:
+                            raise SystemExit(
+                                f"{exc}\n  the events dataset has rejected a vessel id it took "
+                                f"before for {sum(OUTAGE_WAITS) / 3600:.1f} h: {PORTVISIT_DS} may "
+                                f"have been retired. Progress is checkpointed; rerun later, or "
+                                f"pull into a NEW work_dir with --events-dataset NAME.")
+                        continue
+                    keep_ids = [v for v in vids if events_ok(v)]
+                    bad = [v for v in vids if v not in keep_ids]
+                    new = not skip_file.exists()
+                    with skip_file.open("a", newline="") as f:
+                        w = csv.writer(f)
+                        if new:
+                            w.writerow(["imo", "vessel_id", "detail"])
+                        for v in bad:
+                            w.writerow([imo, v, str(exc.detail)[:300]])
+                    log(f"  IMO {imo}: events dataset rejects {len(bad)} of {len(vids)} "
+                        f"identities ({exc.detail}); skipped, listed in {skip_file.name}")
+                    if not keep_ids:
+                        if last_good is None:
+                            all_rejected_run += 1
+                            failed = True
+                            if all_rejected_run >= 3:
+                                raise SystemExit(
+                                    "three IMOs in a row with every identity rejected and no "
+                                    "accepted vessel to compare with: probably an outage. "
+                                    "Progress is checkpointed; rerun later.")
+                        break
+                    vids, offset = keep_ids, 0
+                    continue
+                accepted = accepted or d is not None
                 if d is None:
                     log(f"  incomplete: IMO {imo} -- will retry on next run")
                     failed = True
@@ -414,9 +575,12 @@ def main(argv=None):
             if not failed:
                 done.add(imo)
                 log(f"  {n}/{len(pending)} IMO {imo}: {rows_v} visits")
+                if accepted:
+                    last_good, all_rejected_run = vids[0], 0
             ckpt.write_text(json.dumps({"done_imos": sorted(done), "shard_index": writer.index,
                                         "written": written, "start": start, "end": end,
-                                        "identities": mode}))
+                                        "identities": mode, "identity_dataset": IDENTITY_DS,
+                                        "events_dataset": PORTVISIT_DS}))
             time.sleep(PAUSE)
     finally:
         writer.close()

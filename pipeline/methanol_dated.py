@@ -120,6 +120,8 @@ def fleet_rows(fy: pd.DataFrame, R: int, meta: dict) -> list[dict]:
             if name == "x1":
                 row["touch_known_w"] = float(k.loc[k["touches"].astype(bool), "w_total"].sum()
                                              / Wk) if Wk > 0 else np.nan
+                row["feasible_known_w"] = float(k.loc[k["req_lb"] <= R, "w_total"].sum()
+                                                / Wk) if Wk > 0 else np.nan
                 row["n_known_tank"] = len(k)
         rows.append(row)
     return rows

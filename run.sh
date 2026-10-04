@@ -14,7 +14,7 @@ collect() {
     mkdir -p "$dest"
     find "$out/results" -maxdepth 1 -type f -exec cp {} "$dest/" \;
     local pair src
-    for pair in methanol_pilot:pilot methanol_pilot_ext:pilot_ext identity_rerun:identity_rerun; do
+    for pair in methanol_pilot:pilot methanol_pilot_ext:pilot_ext; do
         src="$out/${pair%%:*}/results"
         if [ -d "$src" ]; then mkdir -p "$dest/${pair##*:}"; cp -r "$src/." "$dest/${pair##*:}/"; fi
     done
@@ -33,8 +33,10 @@ fake() {
     local d; d="$(abspath "${1:-$ROOT/fake}")"
     local in="$d/inputs" out="$d/out"
     [ -e "$in" ] || run make_fake_inputs.py "$in"
-    local gfw="$in/gfw" sw="$in/seaweb/ship_info.csv" cal="$in/type_calibration.csv"
+    local gfw="$out/gfw_clean" sw="$in/seaweb/ship_info.csv" cal="$in/type_calibration.csv"
     local rc="$in/route_cache.csv" pull="$in/methanol_pull" pd="$out/methanol_pilot"
+    run identity_filter.py "$in/gfw" "$gfw"
+    mkdir -p "$out/results" && cp "$gfw/facts_identity_filter.json" "$out/results/"
     run build_stops.py "$out" --gfw "$gfw" --jobs "$J"
     run route_distances.py "$out" --cache "$rc" --jobs 1
     run build_stops.py "$out" --gfw "$gfw" --routes "$out/route_distances.csv" --jobs "$J"
@@ -80,7 +82,10 @@ fake() {
         --main-years 2022-2023 --train 2022 --train-old 2019 --n 4 --min-stops 3
     run methanol_dated.py "$out" --calibration "$cal" --years 2022-2023 --headline 2023 \
         --pilot "$pd" --pilot-years 2023
+    run supplement.py "$out" --calibration "$cal" --train 2019 --eval 2022 --range 7000 --n 4
     run fueleu.py "$out/results"
+    run edge_map.py "$out" --calibration "$cal" --year 2022 --n-large 4 --n-small 2
+    run analyze.py "$out" --calibration "$cal" --train 2019 --eval 2022 --range 7000 --n 4
     collect "$out" "$d/results"
 }
 
@@ -90,9 +95,12 @@ full() {
     local cal=() rc=()
     [ -n "${CALIBRATION:-}" ] && cal=(--calibration "$CALIBRATION")
     [ -n "${ROUTE_CACHE:-}" ] && rc=("$ROUTE_CACHE")
-    run build_stops.py "$out" --gfw "$GFW_DIR" --jobs "$J"
+    local gfw="$out/gfw_clean"
+    run identity_filter.py "$GFW_DIR" "$gfw"
+    mkdir -p "$out/results" && cp "$gfw/facts_identity_filter.json" "$out/results/"
+    run build_stops.py "$out" --gfw "$gfw" --jobs "$J"
     run route_distances.py "$out" --cache ${rc[@]+"${rc[@]}"} --jobs "$J"
-    run build_stops.py "$out" --gfw "$GFW_DIR" --routes "$out/route_distances.csv" --jobs "$J"
+    run build_stops.py "$out" --gfw "$gfw" --routes "$out/route_distances.csv" --jobs "$J"
     run nodes.py "$out"
     run vessels.py "$out" --seaweb "$SEAWEB"
     local c=(--years 2018-2025 --ranges 5000,7000,10000 --nmax 50 --candidates 1500 --jobs "$J")
@@ -142,25 +150,11 @@ full() {
         run pilot.py analyze "$pd" --main "$out" --pull "$pull" --ships "$ships"
         run pilot_breakdown.py "$pd" --main "$out" --ships "$ships"
     done
+    run supplement.py "$out" ${cal[@]+"${cal[@]}"}
     run methanol_dated.py "$out" ${cal[@]+"${cal[@]}"} --pilot "$out/methanol_pilot,$out/methanol_pilot_ext"
     run fueleu.py "$out/results"
-    collect "$out" "$out/bundle"
-}
-
-identity() {
-    : "${OUT_DIR:?set OUT_DIR}" "${IDSAMPLE_DIR:?set IDSAMPLE_DIR}"
-    local out rr; out="$(abspath "$OUT_DIR")"; rr="$out/identity_rerun"
-    local cal=() rc=()
-    [ -n "${CALIBRATION:-}" ] && cal=(--calibration "$CALIBRATION")
-    [ -n "${ROUTE_CACHE:-}" ] && rc=("$ROUTE_CACHE")
-    run identity_filter.py "$IDSAMPLE_DIR" "$rr/pull_clean"
-    run build_stops.py "$rr" --gfw "$rr/pull_clean" --jobs "$J"
-    run route_distances.py "$rr" --cache "$out/route_distances.csv" ${rc[@]+"${rc[@]}"} --jobs "$J"
-    run build_stops.py "$rr" --gfw "$rr/pull_clean" --routes "$rr/route_distances.csv" --jobs "$J"
-    cp "$out/nodes.csv" "$out/port_sets.csv" "$out/vessels.csv" "$rr/"
-    run evaluate.py "$rr" --weight co2 ${cal[@]+"${cal[@]}"} --ns 20 --years 2018-2025 --ship-years-ns 20 \
-        --only '^(external:yap[48]\||greedy\|(2019|2024)\|7000\|all$)' --jobs "$J"
-    run identity_compare.py "$rr" --main "$out"
+    run edge_map.py "$out" ${cal[@]+"${cal[@]}"}
+    run analyze.py "$out" ${cal[@]+"${cal[@]}"}
     collect "$out" "$out/bundle"
 }
 
@@ -179,8 +173,7 @@ restore() {
 case "${1:-}" in
     fake) fake "${2:-}" ;;
     full) full ;;
-    identity) identity ;;
     collect) : "${OUT_DIR:?set OUT_DIR}"; collect "$(abspath "$OUT_DIR")" "$(abspath "$OUT_DIR")/bundle" ;;
     restore) restore ;;
-    *) echo "usage: bash run.sh fake [DIR] | full | identity | collect | restore"; exit 2 ;;
+    *) echo "usage: bash run.sh fake [DIR] | full | collect | restore"; exit 2 ;;
 esac

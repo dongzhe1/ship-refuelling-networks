@@ -33,8 +33,8 @@ All Python package dependencies are listed in `requirements.txt`. Key libraries:
 ### Hardware
 
 No non-standard hardware is required. The demo runs on a normal desktop
-computer. The full run reads 7.9 million port visits; its largest steps need up
-to 160 GB of memory, and it uses all CPU cores by default (`JOBS` sets the
+computer. The full run reads 11.5 million port visits; its largest steps need up
+to 80 GB of memory, and it uses all CPU cores by default (`JOBS` sets the
 number of processes). No GPU is used.
 
 ---
@@ -65,21 +65,21 @@ bash run.sh fake
 
 This generates the fake inputs under `fake/inputs/`, in the same formats as the
 real data (port visits, ship register, calibration factors, route cache,
-methanol-ship pull), runs all 35 steps of the pipeline on them with small
-settings, and writes 67 result files to `fake/results/`.
+methanol-ship pull), runs all 36 steps of the pipeline on them with small
+settings, and writes 75 result files to `fake/results/`.
 
 Expected output: one line per step, ending with the location of the results:
 
 ```
 --- make_fake_inputs.py ...
+--- identity_filter.py ...
 --- build_stops.py ...
---- route_distances.py ...
 ...
---- fueleu.py ...
+--- analyze.py ...
 results -> .../fake/results
 ```
 
-**Expected run time:** under a minute on a normal desktop computer (26 seconds on 16 cores).
+**Expected run time:** under a minute on a normal desktop computer (27 seconds on 16 cores).
 
 ---
 
@@ -91,8 +91,9 @@ each to `fake/inputs/`.
 ### 1. Port visits: `port_visits_*.csv.gz`
 One row per port visit, as written by `pipeline/pull_port_visits.py`:
 ```
-event_id, imo, start, end, confidence, lat, lon, start_anchorage_id,
-start_anchorage_name, start_anchorage_flag, start_at_dock, end_anchorage_id
+event_id, imo, start, end, confidence, lat, lon, vessel_id, vessel_name,
+start_anchorage_id, start_anchorage_name, start_anchorage_flag, start_at_dock,
+end_anchorage_id
 ```
 
 ### 2. Ship register: `ship_info.csv`
@@ -115,6 +116,7 @@ dep_port, arr_port, routed_nm, status
 
 **Key Fields**:
 * **imo / lrnoimo_ship_no**: IMO ship number
+* **vessel_id, vessel_name**: the GFW AIS identity that logged the visit, and its name
 * **start, end**: start and end of the visit (UTC)
 * **confidence**: GFW visit confidence; visits below 3 are dropped
 * **start_anchorage_id, end_anchorage_id**: GFW anchorage identifiers
@@ -142,12 +144,25 @@ Quantities derived from the ship register enter `results/` only aggregated.
 
 **Port visits.** Events are pulled vessel by vessel from the Global Fishing
 Watch API for 2018-01-01 to 2026-08-01, because a date-window query returns
-events that overlap the window rather than start in it. Visits with confidence
-below 3 or lasting more than 30 days are dropped, as are exact duplicates. The
-result files use 29,209 IMO numbers from the Sea-web register snapshot of
-15 August 2021 (28,501 found by GFW, 27,150 with valid visits). GFW updates its
-data continuously, so a new pull differs slightly from the one used here
-(August–September 2026).
+events that overlap the window rather than start in it. Each IMO number is
+pulled under every AIS identity that reports it, since a ship can transmit
+under several identities over time. Visits with confidence below 3 or lasting
+more than 30 days are dropped, as are exact duplicates. The result files use
+29,209 IMO numbers from the Sea-web register snapshot of 15 August 2021: GFW
+resolved identities for 28,497 of them, and the pull holds 11,454,663 visits.
+The fleet was pulled on 1–3 October 2026 and the methanol ships in
+September 2026, all from GFW's AIS pipeline v4.0, which the code now pins
+(`public-global-port-visits-events:v4.0`, `public-global-vessel-identity:v4.0`):
+GFW moves its `latest` alias to v5, with new anchorage identifiers, on
+21 October 2026. GFW revises its data, so a new pull differs slightly.
+
+**One identity per ship.** Where a ship has several identities, the
+operational one is the identity whose last visit is latest; visits under the
+others are kept only if they start before its first visit, so the same call is
+not counted twice (`pipeline/identity_filter.py`). In the fleet pull, 52.0% of
+ships had more than one identity, the other identities supplied 29.8% of the
+visits kept, and 0.37% of visits were dropped
+(`results/facts_identity_filter.json`); 28,362 ships keep valid visits.
 
 **Legs and ports.** Consecutive visits of a ship form legs, measured on routed
 sea distance (`searoute`), or on the great circle where a route cannot be
@@ -171,10 +186,15 @@ and save it in `~/.gfw_token` (`chmod 600`). Write the IMO numbers, one per
 line, to `imos.txt`, then:
 
 ```bash
-python pipeline/pull_port_visits.py /data/gfw --imos imos.txt --start 2018-01-01 --end 2026-08-01
+python pipeline/pull_port_visits.py /data/gfw --imos imos.txt --start 2018-01-01 --end 2026-08-01 \
+       --identities all
 ```
 
-A pull of 29,000 ships takes about a day. The methanol ships (optional):
+The free tier allows 50,000 requests a day, and exceeding it locks the token
+for about 48 hours. The script logs every request in `~/.gfw_requests.log`,
+pauses when the last 24 hours hold 45,000 (`--daily-budget`) and carries on by
+itself; a pull of 29,000 ships takes about three days. Interrupted, the same
+command resumes from `checkpoint.json`. The methanol ships (optional):
 
 ```bash
 python pipeline/pull_port_visits.py /data/methanol --imos pipeline/reference/methanol_ships_public.csv \
@@ -198,13 +218,12 @@ The result files are written to `$OUT_DIR/bundle/`, laid out as `results/`;
 
 ### 3. Result sets that need their own pulls
 
-```bash
-python pipeline/identity_sample.py $OUT_DIR $GFW_DIR $OUT_DIR/identity_rerun/ships.csv
-python pipeline/pull_port_visits.py /data/idsample --imos $OUT_DIR/identity_rerun/ships.csv \
-       --start 2018-01-01 --end 2026-08-01 --identities all
-IDSAMPLE_DIR=/data/idsample bash run.sh identity
+`results/identity_audit_v3/` audits a pull that follows only the first
+identity GFW returns for each IMO number (the default `--identities first`):
 
-python pipeline/audit_identities.py $GFW_DIR $OUT_DIR/identity_audit --n 300
+```bash
+python pipeline/pull_port_visits.py /data/gfw_first --imos imos.txt --start 2018-01-01 --end 2026-08-01
+python pipeline/audit_identities.py /data/gfw_first $OUT_DIR/identity_audit --n 300
 bash run.sh collect
 ```
 
@@ -213,7 +232,7 @@ bash run.sh collect
 ## Repository Structure
 
 ```
-run.sh                 entry point: fake | full | identity | collect | restore
+run.sh                 entry point: fake | full | collect | restore
 requirements.txt
 pipeline/              the pipeline, one script per step
 pipeline/reference/    public reference inputs

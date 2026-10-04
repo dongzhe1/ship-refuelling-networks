@@ -1,0 +1,563 @@
+node_id,node_name,node_iso3,node_lat,node_lon,in_yap4,in_greedy_large,in_greedy_small,in_dualfuel_small,in_dualfuel_large,in_volume_large
+chn-shanghai,SHANGHAI,CHN,31.2465,122.0576,True,True,True,True,True,True
+mys-telokramunia,TELOK RAMUNIA,MYS,1.3548,104.3467,False,True,True,True,True,True
+are-fujairah,FUJAIRAH,ARE,25.2133,56.5857,False,True,True,True,True,True
+chn-ningbo,NINGBO,CHN,29.7022,122.6089,False,False,False,False,False,True
+kor-busan,BUSAN,KOR,35.0837,129.1053,False,True,False,True,True,True
+bel-antwerp,ANTWERP,BEL,51.3521,4.2446,True,True,False,True,True,True
+chn-hongkong,HONGKONG,CHN,22.1613,114.2423,False,True,True,True,True,True
+usa-houston,HOUSTON,USA,29.6081,-94.9529,False,True,False,False,True,True
+nld-rotterdammaasvlakte,ROTTERDAM MAASVLAKTE,NLD,51.9812,3.9998,False,True,False,False,True,True
+chn-caofeidian,CAOFEIDIAN,CHN,38.8702,118.453,False,True,True,False,True,True
+sgp-singapore,SINGAPORE,SGP,1.2311,103.8888,True,True,True,True,True,True
+mys-portklang,PORT KLANG,MYS,2.781,101.277,False,True,False,False,False,True
+chn-qingdao,QINGDAO,CHN,35.9826,120.433,False,False,False,False,False,True
+deu-deu-611,DEU-611,DEU,53.8396,9.3298,False,False,False,False,False,True
+jpn-yokohama,YOKOHAMA,JPN,35.3526,139.7306,False,True,True,False,True,True
+tur-istanbul,ISTANBUL,TUR,40.9653,28.9429,False,True,False,False,True,True
+twn-kaohsiung,KAOHSIUNG,TWN,22.5533,120.2427,False,False,False,False,False,True
+pan-gatunlakeanchorage,GATUN LAKE ANCHORAGE,PAN,9.2067,-79.9284,False,True,False,True,True,False
+egy-portsaid,PORT SAID,EGY,31.4528,32.3028,False,True,False,True,True,False
+egy-suezsouthanchorage,SUEZ SOUTH ANCHORAGE,EGY,29.7248,32.5846,False,True,True,False,False,False
+chn-shenzhen,SHENZHEN,CHN,22.4007,113.7774,False,False,False,False,False,False
+mys-tanjungpelepas,TANJUNG PELEPAS,MYS,1.2187,103.5588,False,True,True,False,True,True
+kor-yeosu,YEOSU,KOR,34.5979,127.9755,False,False,False,False,True,False
+ind-mumbai,MUMBAI,IND,18.8776,72.8321,False,False,False,False,False,True
+are-jebelali,JEBEL ALI,ARE,25.0299,55.0466,False,False,False,False,False,True
+tha-laemchabang,LAEM CHABANG,THA,13.0461,100.8265,False,False,False,False,False,False
+jpn-yokkaichi,YOKKAICHI,JPN,34.8635,136.7489,False,False,False,False,False,False
+idn-surabaya,SURABAYA,IDN,-6.9701,112.7062,False,False,False,False,False,False
+pan-manzanillo,MANZANILLO,PAN,9.491,-79.9233,False,False,False,False,False,False
+deu-kiel,KIEL,DEU,54.371,10.0924,False,False,False,False,False,False
+jpn-kobe,KOBE,JPN,34.5529,135.2319,False,False,False,False,False,False
+ind-mundra,MUNDRA,IND,22.6513,69.7028,False,True,True,False,True,False
+pan-panamaanchoragepacific,PANAMA ANCHORAGE PACIFIC,PAN,8.8444,-79.468,False,False,False,False,False,False
+kor-ulsan,ULSAN,KOR,35.402,129.4526,False,False,False,False,False,False
+gib-gibraltar,GIBRALTAR,GIB,36.1049,-5.3565,False,True,False,True,True,False
+vnm-vnm-16,,VNM,10.6331,106.8228,False,False,False,False,False,False
+chn-yangshan,YANGSHAN,CHN,30.5978,122.1362,True,False,False,False,False,False
+chn-guangzhou,GUANGZHOU,CHN,21.9653,113.993,False,False,False,False,False,False
+mlt-marsaxlokk,MARSAXLOKK,MLT,35.8588,14.8081,False,False,False,False,False,False
+chn-lianyungang,LIANYUNGANG,CHN,34.8117,119.7518,False,False,False,False,False,False
+chn-dalian,DALIAN,CHN,38.8537,121.9617,False,False,False,False,False,False
+vnm-vnm-52,VNM-52,VNM,20.7539,106.9458,False,False,False,False,False,False
+chn-xiamen,XIAMEN,CHN,24.2983,118.2438,False,False,False,False,False,False
+kor-incheon,INCHEON,KOR,37.3372,126.5417,False,False,False,False,False,False
+idn-jakarta,JAKARTA,IDN,-5.9826,106.9095,False,False,False,False,False,False
+nld-rotterdam,ROTTERDAM,NLD,51.9223,3.4893,False,False,False,False,False,False
+deu-bremerhaven,BREMERHAVEN,DEU,53.6035,8.5086,False,False,False,False,False,False
+bra-santos,SANTOS,BRA,-24.1112,-46.3351,False,False,False,False,True,False
+esp-algeciras,ALGECIRAS,ESP,36.0808,-5.3975,False,False,False,False,False,False
+grc-piraeus,PIRAEUS,GRC,37.8824,23.5569,False,False,False,False,False,False
+tur-yalovatown,YALOVA TOWN,TUR,40.698,29.335,False,False,False,False,False,False
+usa-usa-1157,,USA,29.4602,-89.6243,False,False,False,False,False,False
+twn-taichung,TAICHUNG,TWN,24.262,120.4337,False,False,False,False,False,False
+usa-newyork,NEW YORK,USA,40.5841,-74.0171,True,False,False,False,False,False
+bgd-chittagong,CHITTAGONG,BGD,22.0947,91.7813,False,False,False,False,False,False
+fra-lehavre,LE HAVRE,FRA,49.4864,0.0914,False,False,False,False,False,False
+esp-laspalmas,LAS PALMAS,ESP,28.1243,-15.3876,False,False,False,False,True,False
+arg-buenosaires,BUENOS AIRES,ARG,-34.7132,-57.8793,False,False,False,False,False,False
+pak-karachi,KARACHI,PAK,24.8029,66.9873,False,False,False,False,False,False
+rus-novorossiysk,NOVOROSSIYSK,RUS,44.5886,37.8771,False,False,False,False,False,False
+chn-rizhao,RIZHAO,CHN,35.2453,119.8437,False,False,False,False,False,False
+lka-colombo,COLOMBO,LKA,6.979,79.7154,False,False,False,False,False,False
+are-dubai,DUBAI,ARE,25.4472,55.0192,False,False,False,False,False,False
+tha-bangkok,BANGKOK,THA,13.5522,100.5775,False,False,False,False,False,False
+phl-manila,MANILA,PHL,14.542,120.8699,False,False,False,False,False,False
+ind-kandla,KANDLA,IND,22.9723,70.2368,False,False,False,False,False,False
+zaf-durban,DURBAN,ZAF,-29.8761,31.0531,False,False,False,False,False,False
+chn-bayuquan,BAYUQUAN,CHN,40.2892,121.8086,False,False,False,False,False,False
+esp-valencia,VALENCIA,ESP,39.4009,-0.251,False,False,False,False,False,False
+tur-aliaga,ALIAGA,TUR,38.7969,26.8711,False,False,False,False,False,False
+bra-paranagua,PARANAGUA,BRA,-25.508,-48.391,False,False,False,False,False,False
+chn-yantian,YANTIAN,CHN,22.569,114.3783,False,False,False,False,False,False
+mar-tangermed,TANGER MED,MAR,35.889,-5.5598,False,False,False,False,False,False
+chn-qinzhou,QINZHOU,CHN,21.6084,108.661,False,False,False,False,False,False
+rus-saintpetersburg,SAINT PETERSBURG,RUS,59.8857,30.168,False,False,False,False,False,False
+egy-alexandria,ALEXANDRIA,EGY,31.2419,29.757,False,False,False,False,False,False
+usa-longbeach,LONG BEACH,USA,33.6977,-118.1542,False,True,False,False,False,False
+esp-barcelona,BARCELONA,ESP,41.2981,2.1965,False,False,False,False,False,False
+chn-zhuhai,ZHUHAI,CHN,21.8864,113.3371,False,False,False,False,False,False
+sau-jeddah,JEDDAH,SAU,21.4681,39.0838,False,False,False,False,False,False
+kor-pyeongtaek,PYEONGTAEK,KOR,37.0396,126.6839,False,False,False,False,False,False
+gbr-immingham,IMMINGHAM,GBR,53.6107,0.1156,False,False,False,False,False,False
+idn-balikpapan,BALIKPAPAN,IDN,-1.3029,116.816,False,False,False,False,False,False
+can-montreal,MONTREAL,CAN,45.6434,-73.4771,False,False,False,False,False,False
+tur-iskenderun,ISKENDERUN,TUR,36.6211,36.1197,False,False,False,False,False,False
+rus-nakhodka,NAKHODKA,RUS,42.7451,132.9547,False,False,False,False,False,False
+tur-canakkale,CANAKKALE,TUR,39.783,25.9317,False,False,False,False,False,False
+chn-jingtang,JINGTANG,CHN,39.0327,119.1703,False,False,False,False,False,False
+twn-keelung,KEELUNG,TWN,25.2075,121.7282,False,False,False,False,False,False
+swe-goteborg,GOTEBORG,SWE,57.5591,11.6307,False,False,False,False,False,False
+chn-yantai,YANTAI,CHN,37.7344,121.3173,False,False,False,False,False,False
+aus-aus-429,,AUS,-23.8731,151.3636,False,False,False,False,False,False
+sau-rastanura,RAS TANURA,SAU,26.927,50.1814,False,False,False,False,False,False
+tgo-lome,LOME,TGO,6.0216,1.3247,False,False,False,False,False,False
+mex-altamira,ALTAMIRA,MEX,22.4853,-97.8655,False,False,False,False,False,False
+vnm-hochiminh,HO CHI MINH,VNM,10.2408,107.0448,False,False,False,False,False,False
+nga-lagos,LAGOS,NGA,6.293,3.4024,False,False,False,False,False,False
+fra-fos-sur-mer,FOS-SUR-MER,FRA,43.3339,5.0004,False,False,False,False,False,False
+col-cartagena,CARTAGENA,COL,10.3054,-75.5639,False,False,False,False,False,False
+gbr-erith,ERITH,GBR,51.5197,1.0158,False,False,False,False,False,False
+irq-ummqasr,UMM QASR,IRQ,29.7273,48.6168,False,False,False,False,False,False
+rus-vistino,VISTINO,RUS,59.7829,28.4077,False,False,False,False,False,False
+omn-sohar,SOHAR,OMN,24.6119,56.6645,False,False,False,False,False,False
+pol-gdynia,GDYNIA,POL,54.5193,18.7153,False,False,False,False,False,False
+egy-damietta,DAMIETTA,EGY,31.4713,31.7679,False,False,False,False,False,False
+gbr-sainthelens,SAINT HELENS,GBR,50.7079,-1.0166,False,False,False,False,False,False
+twn-taipei,TAIPEI,TWN,25.1941,121.3343,False,False,False,False,False,False
+jpn-mizushima,MIZUSHIMA,JPN,34.416,133.7494,False,False,False,False,False,False
+per-callao,CALLAO,PER,-12.0242,-77.2247,False,False,False,False,False,False
+tto-pointlisas,POINT LISAS,TTO,10.402,-61.5857,False,False,False,False,False,False
+tur-dardanelles,DARDANELLES,TUR,40.6099,27.164,False,False,False,False,False,False
+zaf-richardsbay,RICHARDS BAY,ZAF,-28.7969,32.0789,False,False,False,False,False,False
+sau-aljubail,AL JUBAIL,SAU,27.1711,49.8214,False,False,False,False,False,False
+ind-chennai,CHENNAI,IND,13.089,80.3905,False,False,False,False,False,False
+rus-vladivostok,VLADIVOSTOK,RUS,43.043,132.0156,False,False,False,False,False,False
+usa-hampton,,USA,37.0056,-76.3149,False,False,False,False,False,False
+ind-vizag,VIZAG,IND,17.6072,83.4087,False,False,False,False,False,False
+qat-mesaieed,MESAIEED,QAT,24.8896,51.6386,False,False,False,False,False,False
+can-vancouver,VANCOUVER,CAN,49.2964,-123.2519,False,False,False,False,False,False
+aus-brisbane,,AUS,-27.3625,153.1772,False,False,False,False,False,False
+ita-ita-372,,ITA,45.3555,12.2484,False,False,False,False,False,False
+are-khalifa,KHALIFA,ARE,24.8289,54.671,False,False,False,False,False,False
+kwt-minaalahmadi,MINA AL AHMADI,KWT,29.0614,48.3112,False,False,False,False,False,False
+bra-riogrande,RIO GRANDE,BRA,-32.1618,-52.0866,False,False,False,False,False,False
+chn-qinhuangdao,QINHUANGDAO,CHN,39.7391,119.8039,False,False,False,False,False,False
+rou-constanta,CONSTANTA,ROU,44.1101,28.7807,False,False,False,False,False,False
+ind-haldia,HALDIA,IND,22.0156,88.0701,False,False,False,False,False,False
+jam-kingston,KINGSTON,JAM,17.8864,-76.772,False,False,False,False,False,False
+ind-hazira,HAZIRA,IND,20.9635,72.5831,False,False,False,False,False,False
+aus-geelong,GEELONG,AUS,-37.9719,144.9072,False,False,False,False,False,False
+chn-zhoushan,ZHOUSHAN,CHN,30.1381,122.302,False,False,False,False,False,False
+ury-montevideo,MONTEVIDEO,URY,-35.0423,-56.0669,False,False,False,False,False,False
+tur-mersin,MERSIN,TUR,36.7123,34.6993,False,False,False,False,False,False
+ita-genoa,GENOA,ITA,44.3628,8.9992,False,False,False,False,False,False
+chn-zhapu,ZHAPU,CHN,30.5768,121.2716,False,False,False,False,False,False
+bra-aratu,ARATU,BRA,-13.046,-38.5982,False,False,False,False,False,False
+mar-casablanca,CASABLANCA,MAR,33.7056,-7.5923,False,False,False,False,False,False
+tur-rumelifeneri,RUMELIFENERI,TUR,41.2355,29.1183,False,False,False,False,False,False
+jpn-ube,UBE,JPN,33.8773,131.2227,False,False,False,False,False,False
+jpn-kokura,KOKURA,JPN,34.0432,130.8352,False,False,False,False,False,False
+jpn-hakata,HAKATA,JPN,33.6589,130.2598,False,False,False,False,False,False
+usa-sausalito,SAUSALITO,USA,37.8327,-122.4765,False,False,False,False,False,False
+gbr-liverpool,LIVERPOOL,GBR,53.4614,-3.0316,False,False,False,False,False,False
+usa-marcushook,MARCUS HOOK,USA,39.787,-75.454,False,False,False,False,False,False
+mex-veracruz,VERACRUZ,MEX,19.1694,-96.0608,False,False,False,False,False,False
+usa-usa-1162,,USA,32.0832,-80.9909,False,False,False,False,False,False
+tur-gemlik,GEMLIK,TUR,40.4127,29.0739,False,False,False,False,False,False
+mex-coatzacoalcos,COATZACOALCOS,MEX,18.2259,-94.4051,False,False,False,False,False,False
+gtm-puertobarrios,PUERTO BARRIOS,GTM,15.8399,-88.6261,False,False,False,False,False,False
+bel-zeebrugge,ZEEBRUGGE,BEL,51.3556,3.1811,False,False,False,False,False,False
+ury-recaladaanchorage,RECALADA ANCHORAGE,URY,-35.1391,-55.4887,False,False,False,False,False,False
+bra-riodejaneiro,RIO DE JANEIRO,BRA,-23.0421,-43.1392,False,False,False,False,False,False
+chn-quanzhou,QUANZHOU,CHN,24.9269,119.0785,False,False,False,False,False,False
+fin-fin-130,FIN-130,FIN,60.2059,25.6237,False,False,False,False,False,False
+usa-porteverglades,PORT EVERGLADES,USA,26.1104,-80.075,False,False,False,False,False,False
+ltu-klaipeda,KLAIPEDA,LTU,55.7262,21.0933,False,False,False,False,False,False
+aus-kwinana,KWINANA,AUS,-32.0449,115.6762,False,False,False,False,False,False
+mys-penang,PENANG,MYS,5.4632,100.3299,False,False,False,False,False,False
+fra-dunkirk,DUNKIRK,FRA,51.0379,2.1863,False,False,False,False,False,False
+jpn-hiroshima,HIROSHIMA,JPN,34.3248,132.3722,False,False,False,False,False,False
+zaf-portelizabeth,PORT ELIZABETH,ZAF,-33.8703,25.7892,False,False,False,False,False,False
+cmr-douala,DOUALA,CMR,3.9996,9.6272,False,False,False,False,False,False
+mus-portlouis,PORT LOUIS,MUS,-20.1401,57.4554,False,False,False,False,False,False
+civ-abidjan,ABIDJAN,CIV,5.201,-4.0211,False,False,False,False,False,False
+chn-ningde,NINGDE,CHN,26.4626,120.0114,False,False,False,False,False,False
+dji-djibouti,DJIBOUTI,DJI,11.6646,43.0897,False,False,False,False,False,False
+isr-haifa,HAIFA,ISR,32.8819,34.9878,False,False,False,False,False,False
+ecu-guayaquil,GUAYAQUIL,ECU,-2.3569,-80.0044,False,False,False,False,False,False
+mex-manzanillo,MANZANILLO,MEX,19.0699,-104.3658,False,False,False,False,False,False
+isr-ashdod,ASHDOD,ISR,31.8476,34.5732,False,False,False,False,False,False
+gbr-felixstowe,FELIXSTOWE,GBR,51.9573,1.5463,False,False,False,False,False,False
+ita-ravenna,RAVENNA,ITA,44.4925,12.5055,False,False,False,False,False,False
+usa-mobile,MOBILE,USA,30.6545,-88.0325,False,False,False,False,False,False
+omn-salalah,SALALAH,OMN,16.9286,54.0866,False,False,False,False,False,False
+phl-davao,DAVAO,PHL,7.0602,125.6293,False,False,False,False,False,False
+idn-belawan,BELAWAN,IDN,3.9183,98.778,False,False,False,False,False,False
+fra-saintnazaire,SAINT NAZAIRE,FRA,47.2679,-2.2017,False,False,False,False,False,False
+ita-livorno,LIVORNO,ITA,43.4853,10.2579,False,False,False,False,False,False
+dom-riohaina,RIO HAINA,DOM,18.401,-70.0219,False,False,False,False,False,False
+usa-charleston,CHARLESTON,USA,32.7622,-79.8791,False,False,False,False,False,False
+chn-jinzhou,JINZHOU,CHN,40.683,121.1397,False,False,False,False,False,False
+usa-jeffersonbeach,JEFFERSON BEACH,USA,39.2023,-76.4818,False,False,False,False,False,False
+ind-mangalore,MANGALORE,IND,12.9261,74.8072,False,False,False,False,False,False
+egy-suezcanal,SUEZ CANAL,EGY,30.4328,32.354,False,False,False,False,False,False
+bra-itaguai,ITAGUAI,BRA,-22.9479,-43.8541,False,False,False,False,False,False
+mys-kuantancity,KUANTAN CITY,MYS,3.9449,103.489,False,False,False,False,False,False
+chn-chn-189,CHN-189,CHN,30.9713,122.8453,False,False,False,False,False,False
+esp-bilbao,BILBAO,ESP,43.3999,-3.1142,False,False,False,False,False,False
+idn-makassar,MAKASSAR,IDN,-5.111,119.352,False,False,False,False,False,False
+esp-tenerife,TENERIFE,ESP,28.4851,-16.1955,False,False,False,False,False,False
+usa-freeport,FREEPORT,USA,28.9396,-95.302,False,False,False,False,False,False
+sen-dakar,DAKAR,SEN,14.6214,-17.3632,False,False,False,False,False,False
+chn-putian,PUTIAN,CHN,25.3012,119.4436,False,False,False,False,False,False
+jpn-shimizu,SHIMIZU,JPN,35.0334,138.5307,False,False,False,False,False,False
+prt-leixoes,LEIXOES,PRT,41.1146,-8.7671,False,False,False,False,False,False
+prt-sines,SINES,PRT,37.878,-8.878,False,False,False,False,False,False
+irn-bandarabbas,BANDAR ABBAS,IRN,27.0366,56.2958,False,False,False,False,False,False
+mex-lazarocardenas,LAZARO CARDENAS,MEX,17.8815,-102.1664,False,False,False,False,False,False
+bhs-freeport,FREEPORT,BHS,26.5037,-78.7767,False,False,False,False,False,False
+est-muuga,MUUGA,EST,59.4975,24.9603,False,False,False,False,False,False
+prt-oeiras,OEIRAS,PRT,38.6762,-9.3178,False,False,False,False,False,False
+gha-tema,TEMA,GHA,5.559,0.0676,False,False,False,False,False,False
+bra-vitoria,VITORIA,BRA,-20.3926,-40.1687,False,False,False,False,False,False
+col-santamarta,SANTA MARTA,COL,11.2414,-74.2371,False,False,False,False,False,False
+irl-dublin,DUBLIN,IRL,53.3097,-6.0754,False,False,False,False,False,False
+arg-campana,CAMPANA,ARG,-34.1726,-58.9102,False,False,False,False,False,False
+moz-maputo,MAPUTO,MOZ,-25.976,32.568,False,False,False,False,False,False
+hnd-puertocortes,PUERTO CORTES,HND,15.8698,-87.985,False,False,False,False,False,False
+nzl-tauranga,TAURANGA,NZL,-37.6389,176.1783,False,False,False,False,False,False
+esp-huelva,HUELVA,ESP,37.0762,-6.8486,False,False,False,False,False,False
+jpn-sendai,SENDAI,JPN,38.2143,141.1494,False,False,False,False,False,False
+ind-kochi,KOCHI,IND,9.9256,76.1233,False,False,False,False,False,False
+jpn-tokuyamakudamatsuanchorage,TOKUYAMAKUDAMATSU ANCHORAGE,JPN,33.9489,131.7832,False,False,False,False,False,False
+aus-botanybay,BOTANY BAY,AUS,-33.9857,151.2296,False,False,False,False,False,False
+usa-tampa,TAMPA,USA,27.9034,-82.431,False,False,False,False,False,False
+jor-aqabaindustrial,AQABA INDUSTRIAL,JOR,29.3661,34.9597,False,False,False,False,False,False
+bra-saofranciscodosul,SAO FRANCISCO DO SUL,BRA,-26.1721,-48.5669,False,False,False,False,False,False
+usa-mayport,MAYPORT,USA,30.3965,-81.4089,False,False,False,False,False,False
+bhr-khalifabinsalman,KHALIFA BIN SALMAN,BHR,26.2338,50.7487,False,False,False,False,False,False
+ita-gioiatauro,GIOIA TAURO,ITA,38.4487,15.903,False,False,False,False,False,False
+bra-viladoconde,VILA DO CONDE,BRA,-1.4966,-48.728,False,False,False,False,False,False
+esp-vigo,VIGO,ESP,42.2057,-8.872,False,False,False,False,False,False
+phl-batangas,BATANGAS,PHL,13.7303,121.0314,False,False,False,False,False,False
+cri-moin,MOIN,CRI,10.0385,-83.0659,False,False,False,False,False,False
+deu-hamburg,HAMBURG,DEU,54.0485,8.1052,False,False,False,False,False,False
+gbr-tees,TEES,GBR,54.7027,-0.9878,False,False,False,False,False,False
+chl-talcahuano,TALCAHUANO,CHL,-36.6546,-73.05,False,False,False,False,False,False
+jpn-mikawa,MIKAWA,JPN,34.6675,137.0314,False,False,False,False,False,False
+phl-cebu,CEBU,PHL,10.2308,123.8767,False,False,False,False,False,False
+nga-bonny,BONNY,NGA,4.4084,7.1317,False,False,False,False,False,False
+sau-kingabdullah,,SAU,22.5235,39.084,False,False,False,False,False,False
+bra-santana,SANTANA,BRA,-0.0605,-51.0985,False,False,False,False,False,False
+mmr-yangon,YANGON,MMR,16.68,96.219,False,False,False,False,False,False
+gtm-puertoquetzal,PUERTO QUETZAL,GTM,13.8876,-90.7798,False,False,False,False,False,False
+cyp-limassol,LIMASSOL,CYP,34.6618,33.0706,False,False,False,False,False,False
+svn-koper,KOPER,SVN,45.5817,13.6574,False,False,False,False,False,False
+chn-changxingdao,CHANGXINGDAO,CHN,39.5643,121.1971,False,False,False,False,False,False
+lbn-beirut,BEIRUT,LBN,33.9138,35.5037,False,False,False,False,False,False
+usa-neworleans,NEW ORLEANS,USA,28.8729,-89.354,False,False,False,False,False,False
+col-barranquilla,BARRANQUILLA,COL,11.0519,-74.8301,False,False,False,False,False,False
+fin-kotka,KOTKA,FIN,60.4195,26.9138,False,False,False,False,False,False
+vnm-danang,DA NANG,VNM,16.165,108.1988,False,False,False,False,False,False
+ken-mombasa,MOMBASA,KEN,-4.0793,39.6641,False,False,False,False,False,False
+idn-nipahanchorage,NIPAH ANCHORAGE,IDN,1.1427,103.5703,False,False,False,False,False,False
+col-buenaventura,BUENAVENTURA,COL,3.8127,-77.1962,False,False,False,False,False,False
+chn-yangpu,YANGPU,CHN,19.7535,109.0722,False,False,False,False,False,False
+bra-suape,SUAPE,BRA,-8.3749,-34.887,False,False,False,False,False,False
+ita-trieste,TRIESTE,ITA,45.6285,13.6685,False,False,False,False,False,False
+lva-riga,RIGA,LVA,57.1291,23.8614,False,False,False,False,False,False
+tur-asyaport,ASYAPORT,TUR,40.9033,27.4695,False,False,False,False,False,False
+idn-semarang,SEMARANG,IDN,-6.8678,110.3991,False,False,False,False,False,False
+chl-quintero,QUINTERO,CHL,-32.7556,-71.5276,False,False,False,False,False,False
+moz-beira,BEIRA,MOZ,-19.8604,34.8161,False,False,False,False,False,False
+ind-tuticorin,TUTICORIN,IND,8.7389,78.2731,False,False,False,False,False,False
+cog-pointenoire,POINTE NOIRE,COG,-4.7728,11.779,False,False,False,False,False,False
+mys-mys-85,,MYS,3.243,112.9987,False,False,False,False,False,False
+phl-bugo,BUGO,PHL,8.5295,124.7401,False,False,False,False,False,False
+idn-tanjunguban,TANJUNG UBAN,IDN,1.1159,104.1896,False,False,False,False,False,False
+sau-dammam,DAMMAM,SAU,26.6455,50.3298,False,False,False,False,False,False
+nzl-orakei,ORAKEI,NZL,-36.849,174.8105,False,False,False,False,False,False
+kwt-kuwaitcity,KUWAIT CITY,KWT,29.3575,47.9348,False,False,False,False,False,False
+dza-alger,ALGER,DZA,36.808,3.1052,False,False,False,False,False,False
+chn-chn-2366,CHN-2366,CHN,23.1734,116.7885,False,False,False,False,False,False
+ita-laspezia,LA SPEZIA,ITA,44.0251,9.9329,False,False,False,False,False,False
+gbr-grangemouth,GRANGEMOUTH,GBR,56.0352,-3.6848,False,False,False,False,False,False
+chn-wenzhou,WENZHOU,CHN,27.8962,121.2595,False,False,False,False,False,False
+esp-castellon,CASTELLON,ESP,39.9595,0.0912,False,False,False,False,False,False
+zaf-capetown,CAPE TOWN,ZAF,-33.8957,18.3595,False,False,False,False,False,False
+jpn-tomakomai,TOMAKOMAI,JPN,42.5737,141.6227,False,False,False,False,False,False
+can-saintjohn,SAINT JOHN,CAN,45.2587,-66.0625,False,False,False,False,False,False
+dom-caucedo,CAUCEDO,DOM,18.408,-69.6259,False,False,False,False,False,False
+ita-napoli,NAPOLI,ITA,40.8066,14.3136,False,False,False,False,False,False
+ita-sarroch,SARROCH,ITA,39.0391,9.1098,False,False,False,False,False,False
+sdn-portsudan,PORT SUDAN,SDN,19.6127,37.2774,False,False,False,False,False,False
+esp-gijon,GIJON,ESP,43.6125,-5.6902,False,False,False,False,False,False
+ind-kolkata,KOLKATA,IND,22.5463,88.2988,False,False,False,False,False,False
+nor-storsteilene,STORSTEILENE,NOR,59.8167,10.6085,False,False,False,False,False,False
+phl-subic,SUBIC,PHL,14.7931,120.2136,False,False,False,False,False,False
+ago-luanda,LUANDA,AGO,-8.7311,13.2476,False,False,False,False,False,False
+chl-sanantonio,SAN ANTONIO,CHL,-33.5892,-71.6821,False,False,False,False,False,False
+esp-elferrol,EL FERROL,ESP,43.4572,-8.332,False,False,False,False,False,False
+aus-adelaide,ADELAIDE,AUS,-34.778,138.4816,False,False,False,False,False,False
+ita-salerno,SALERNO,ITA,40.6354,14.7318,False,False,False,False,False,False
+gbr-portishead,PORTISHEAD,GBR,51.489,-2.7611,False,False,False,False,False,False
+guy-georgetown,GEORGETOWN,GUY,6.8227,-58.168,False,False,False,False,False,False
+prt-prt-46,,PRT,38.4765,-8.9804,False,False,False,False,False,False
+pri-sanjuan,SAN JUAN,PRI,18.4619,-66.1137,False,False,False,False,False,False
+usa-usa-1839,,USA,45.7494,-122.7709,False,False,False,False,False,False
+tza-daressalaam,DAR ES SALAAM,TZA,-6.7364,39.3491,False,False,False,False,False,False
+usa-usa-1599,USA-1599,USA,47.3366,-122.4748,False,False,False,False,False,False
+arg-arroyoseco,ARROYO SECO,ARG,-33.1382,-60.4768,False,False,False,False,False,False
+chl-mejillones,MEJILLONES,CHL,-23.0583,-70.416,False,False,False,False,False,False
+khm-sihanoukville,SIHANOUKVILLE,KHM,10.6686,103.4367,False,False,False,False,False,False
+nor-langesund,LANGESUND,NOR,59.0008,9.7506,False,False,False,False,False,False
+tur-izmir,IZMIR,TUR,38.4068,27.067,False,False,False,False,False,False
+sle-freetown,FREETOWN,SLE,8.4724,-13.3797,False,False,False,False,False,False
+bra-itajai,ITAJAI,BRA,-26.902,-48.5312,False,False,False,False,False,False
+ind-dahej,DAHEJ,IND,21.6825,72.47,False,False,False,False,False,False
+usa-miami,MIAMI,USA,25.7822,-80.085,False,False,False,False,False,False
+deu-deu-626,DEU-626,DEU,53.6859,8.0691,False,False,False,False,False,False
+can-shearwater,SHEARWATER,CAN,44.6036,-63.5102,False,False,False,False,False,False
+grc-thessaloniki,THESSALONIKI,GRC,40.5958,22.9142,False,False,False,False,False,False
+dza-skikda,SKIKDA,DZA,36.9207,6.9344,False,False,False,False,False,False
+lby-misurata,MISURATA,LBY,32.4015,15.2983,False,False,False,False,False,False
+qat-doha,DOHA,QAT,25.3234,51.8289,False,False,False,False,False,False
+can-robertsbank,ROBERTS BANK,CAN,49.0106,-123.1678,False,False,False,False,False,False
+brn-muara,MUARA,BRN,5.0852,115.0915,False,False,False,False,False,False
+irn-bandarimamkhomeini,BANDAR IMAM KHOMEINI,IRN,30.3995,49.0398,False,False,False,False,False,False
+vnm-dungquat,,VNM,15.4101,108.7759,False,False,False,False,False,False
+bgr-burgas,BURGAS,BGR,42.4944,27.5895,False,False,False,False,False,False
+geo-poti,POTI,GEO,42.1706,41.5961,False,False,False,False,False,False
+chn-weihai,WEIHAI,CHN,37.5324,122.3188,False,False,False,False,False,False
+moz-nacala,NACALA,MOZ,-14.5036,40.667,False,False,False,False,False,False
+dnk-aarhus,AARHUS,DNK,56.135,10.292,False,False,False,False,False,False
+gbr-belfast,BELFAST,GBR,54.6333,-5.8827,False,False,False,False,False,False
+rus-kaliningrad,KALININGRAD,RUS,54.6635,19.777,False,False,False,False,False,False
+tur-samsun,SAMSUN,TUR,41.3444,36.3614,False,False,False,False,False,False
+usa-boston,BOSTON,USA,42.3423,-70.9633,False,False,False,False,False,False
+bgd-monglaanchorage,MONGLA ANCHORAGE,BGD,22.2593,89.5806,False,False,False,False,False,False
+ben-cotonou,COTONOU,BEN,6.2602,2.5026,False,False,False,False,False,False
+dza-bejaia,BEJAIA,DZA,36.7422,5.1462,False,False,False,False,False,False
+mys-kotakinabalu,KOTA KINABALU,MYS,6.027,116.0631,False,False,False,False,False,False
+nam-walvisbay,WALVIS BAY,NAM,-22.8657,14.4694,False,False,False,False,False,False
+nzl-portlyttelton,PORT LYTTELTON,NZL,-43.6092,172.731,False,False,False,False,False,False
+gin-conakry,CONAKRY,GIN,9.4103,-13.7254,False,False,False,False,False,False
+isl-isl-64,,ISL,64.2073,-21.9269,False,False,False,False,False,False
+ita-savona,SAVONA,ITA,44.2738,8.4965,False,False,False,False,False,False
+slv-acajutla,ACAJUTLA,SLV,13.5636,-89.8809,False,False,False,False,False,False
+nor-karsto,KARSTO,NOR,59.226,5.5136,False,False,False,False,False,False
+aus-magneticisland,MAGNETIC ISLAND,AUS,-19.1597,146.8547,False,False,False,False,False,False
+can-princerupert,PRINCE RUPERT,CAN,54.1985,-130.3727,False,False,False,False,False,False
+vir-stcroix,ST CROIX,VIR,17.6935,-64.7454,False,False,False,False,False,False
+gbr-london,LONDON,GBR,51.5071,1.5274,False,False,False,False,False,False
+ind-pipavav,PIPAVAV,IND,20.8854,71.5343,False,False,False,False,False,False
+mar-agadir,AGADIR,MAR,30.4223,-9.7032,False,False,False,False,False,False
+kor-okpo,OKPO,KOR,34.8639,128.8286,False,False,False,False,False,False
+brb-bridgetown,BRIDGETOWN,BRB,13.1006,-59.6406,False,False,False,False,False,False
+usa-wilmingtonnc,WILMINGTON NC,USA,34.171,-77.9502,False,False,False,False,False,False
+irl-cork,CORK,IRL,51.7344,-8.2584,False,False,False,False,False,False
+jpn-matsuyama,MATSUYAMA,JPN,33.8573,132.6675,False,False,False,False,False,False
+hti-portauprince,PORT AU PRINCE,HTI,18.5705,-72.4038,False,False,False,False,False,False
+esp-cadiz,CADIZ,ESP,36.5674,-6.3416,False,False,False,False,False,False
+esp-santander,SANTANDER,ESP,43.4963,-3.7563,False,False,False,False,False,False
+nzl-napier,NAPIER,NZL,-39.4509,176.9697,False,False,False,False,False,False
+dza-oran,ORAN,DZA,35.7691,-0.6276,False,False,False,False,False,False
+jpn-niigata,NIIGATA,JPN,38.0248,139.2012,False,False,False,False,False,False
+hrv-rijeka,RIJEKA,HRV,45.2999,14.4176,False,False,False,False,False,False
+cri-caldera,CALDERA,CRI,9.9039,-84.7606,False,False,False,False,False,False
+png-portmoresby,PORT MORESBY,PNG,-9.516,147.1607,False,False,False,False,False,False
+usa-honolulu,HONOLULU,USA,21.2965,-157.8693,False,False,False,False,False,False
+mys-mys-120,,MYS,3.1079,101.3112,False,False,False,False,False,False
+usa-seattle,SEATTLE,USA,47.6325,-122.4174,False,False,False,False,False,False
+phl-generalsantos,GENERAL SANTOS,PHL,6.0819,125.156,False,False,False,False,False,False
+mys-mys-2,MYS-2,MYS,1.5738,104.5333,False,False,False,False,False,False
+abw-oranjestad,ORANJESTAD,ABW,12.498,-70.0173,False,False,False,False,False,False
+mys-mys-49,,MYS,1.6412,110.4829,False,False,False,False,False,False
+gab-owendo,OWENDO,GAB,0.3393,9.3864,False,False,False,False,False,False
+png-lae,LAE,PNG,-6.7446,147.0014,False,False,False,False,False,False
+ven-puertocabello,PUERTO CABELLO,VEN,10.5385,-68.0032,False,False,False,False,False,False
+reu-reunion,REUNION,REU,-20.9315,55.3174,False,False,False,False,False,False
+mtq-fortdefrance,FORT DE FRANCE,MTQ,14.5665,-61.1014,False,False,False,False,False,False
+mex-mex-210,,MEX,21.3768,-89.7174,False,False,False,False,False,False
+bra-pecem,PECEM,BRA,-3.4734,-38.7765,False,False,False,False,False,False
+ago-matadi,MATADI,AGO,-5.8665,13.4131,False,False,False,False,False,False
+idn-idn-215,,IDN,-3.701,128.1079,False,False,False,False,False,False
+bra-fortaleza,FORTALEZA,BRA,-3.6601,-38.424,False,False,False,False,False,False
+ncl-noumea,NOUMEA,NCL,-22.2581,166.3883,False,False,False,False,False,False
+nic-corinto,CORINTO,NIC,12.4608,-87.2397,False,False,False,False,False,False
+ecu-lalibertad,LA LIBERTAD,ECU,-2.1449,-80.9183,False,False,False,False,False,False
+rus-korsakov,KORSAKOV,RUS,46.5994,142.6804,False,False,False,False,False,False
+chn-weifang,WEIFANG,CHN,37.4001,119.34,False,False,False,False,False,False
+swe-swe-329,,SWE,59.0468,17.6915,False,False,False,False,False,False
+per-tierracolorada,TIERRA COLORADA,PER,-5.0746,-81.148,False,False,False,False,False,False
+kor-donghae,DONGHAE,KOR,37.5138,129.1662,False,False,False,False,False,False
+glp-pointeapitre,POINTE A PITRE,GLP,16.2022,-61.5402,False,False,False,False,False,False
+yem-hodeidah,HODEIDAH,YEM,14.9555,42.8855,False,False,False,False,False,False
+sxm-stmaarten,ST MAARTEN,SXM,18.0095,-63.0884,False,False,False,False,False,False
+usa-baltimore,BALTIMORE,USA,38.8885,-76.4124,False,False,False,False,False,False
+fro-torshavn,TORSHAVN,FRO,61.9924,-6.6939,False,False,False,False,False,False
+dnk-helsingor,HELSINGOR,DNK,56.0456,12.617,False,False,False,False,False,False
+lby-benghazi,BENGHAZI,LBY,32.1248,19.9641,False,False,False,False,False,False
+mrt-cansado,CANSADO,MRT,20.7288,-17.0148,False,False,False,False,False,False
+swe-gavle,GAVLE,SWE,60.7069,17.4343,False,False,False,False,False,False
+mrt-nouakchott,NOUAKCHOTT,MRT,17.9776,-16.1019,False,False,False,False,False,False
+dnk-copenhagen,COPENHAGEN,DNK,55.7592,12.7138,False,False,False,False,False,False
+esp-alicante,ALICANTE,ESP,38.3141,-0.4482,False,False,False,False,False,False
+fin-rauma,RAUMA,FIN,61.1268,21.4318,False,False,False,False,False,False
+ita-civitavecchia,CIVITAVECCHIA,ITA,42.0806,11.75,False,False,False,False,False,False
+idn-idn-243,IDN-243,IDN,-3.8175,122.5,False,False,False,False,False,False
+ita-falconara,,ITA,43.7155,13.5516,False,False,False,False,False,False
+col-turbo,TURBO,COL,7.9759,-76.7772,False,False,False,False,False,False
+dnk-fredericia,FREDERICIA,DNK,55.5771,9.8928,False,False,False,False,False,False
+idn-bitung,BITUNG,IDN,1.4242,125.1571,False,False,False,False,False,False
+mex-mazatlan,MAZATLAN,MEX,23.1487,-106.4132,False,False,False,False,False,False
+can-trios-pistolesanchorage,TRIOS-PISTOLES ANCHORAGE,CAN,48.2844,-69.1309,False,False,False,False,False,False
+per-ilo,ILO,PER,-17.6284,-71.3731,False,False,False,False,False,False
+nor-godoya,,NOR,62.4668,6.0166,False,False,False,False,False,False
+gbr-inverkip,INVERKIP,GBR,55.9086,-4.8792,False,False,False,False,False,False
+gha-sekondi-takoradi,SEKONDI-TAKORADI,GHA,4.8684,-1.6831,False,False,False,False,False,False
+mdv-male,MALE,MDV,4.2588,73.4966,False,False,False,False,False,False
+jpn-naha,NAHA,JPN,26.2493,127.6476,False,False,False,False,False,False
+usa-usa-1685,USA-1685,USA,34.1153,-119.211,False,False,False,False,False,False
+lka-hambantota,,LKA,6.1236,81.1041,False,False,False,False,False,False
+nzl-wellington,WELLINGTON,NZL,-41.2717,174.8067,False,False,False,False,False,False
+civ-sanpedro,SAN PEDRO,CIV,4.6992,-6.5966,False,False,False,False,False,False
+mys-sandakan,SANDAKAN,MYS,5.8243,118.1148,False,False,False,False,False,False
+chn-gouqiisland,GOUQI ISLAND,CHN,30.6706,122.8054,False,False,False,False,False,False
+tur-antalya,ANTALYA,TUR,36.8107,30.6223,False,False,False,False,False,False
+per-pisco,PISCO,PER,-13.7505,-76.2736,False,False,False,False,False,False
+grc-kalilimenesanchorage,KALI LIMENES ANCHORAGE,GRC,34.9257,24.8245,False,False,False,False,False,False
+mys-labuan,LABUAN,MYS,5.2315,115.2629,False,False,False,False,False,False
+nzl-portchalmers,PORT CHALMERS,NZL,-45.8088,170.6256,False,False,False,False,False,False
+aus-darwin,DARWIN,AUS,-12.3164,130.7075,False,False,False,False,False,False
+can-troisrivieres,TROIS RIVIERES,CAN,46.3601,-72.5184,False,False,False,False,False,False
+mdg-toamasina,TOAMASINA,MDG,-18.0967,49.4284,False,False,False,False,False,False
+rus-rus-403,RUS-403,RUS,64.7523,40.4974,False,False,False,False,False,False
+chl-iquique,IQUIQUE,CHL,-20.1985,-70.1708,False,False,False,False,False,False
+yem-aden,ADEN,YEM,12.7036,44.9185,False,False,False,False,False,False
+esp-sevilla,SEVILLA,ESP,37.3174,-5.9924,False,False,False,False,False,False
+jpn-matsuura,MATSUURA,JPN,33.461,129.6755,False,False,False,False,False,False
+chl-antofagasta,ANTOFAGASTA,CHL,-23.6761,-70.4329,False,False,False,False,False,False
+esp-malaga,MALAGA,ESP,36.6889,-4.3594,False,False,False,False,False,False
+fji-suva,SUVA,FJI,-18.1429,178.4143,False,False,False,False,False,False
+nzl-marsdenpoint,,NZL,-35.8884,174.5929,False,False,False,False,False,False
+tun-sfax,SFAX,TUN,34.6624,10.842,False,False,False,False,False,False
+bra-manaus,,BRA,-3.138,-59.9185,False,False,False,False,False,False
+atg-stjohns,ST JOHNS,ATG,17.1565,-61.9135,False,False,False,False,False,False
+can-victoria,VICTORIA,CAN,48.3379,-123.36,False,False,False,False,False,False
+tun-rades,RADES,TUN,36.8293,10.4368,False,False,False,False,False,False
+rus-petropavlovsk,PETROPAVLOVSK,RUS,52.9758,158.6545,False,False,False,False,False,False
+prt-pontadelgada,PONTA DELGADA,PRT,37.736,-25.6366,False,False,False,False,False,False
+vnm-quinhon,QUI NHON,VNM,13.7748,109.2493,False,False,False,False,False,False
+idn-tarakan,TARAKAN,IDN,3.2448,117.6056,False,False,False,False,False,False
+nor-rottvegen,,NOR,58.9172,5.5104,False,False,False,False,False,False
+egy-abuqir,ABU QIR,EGY,31.3941,30.0752,False,False,False,False,False,False
+swe-norrkopinganchorage,,SWE,58.6468,16.5142,False,False,False,False,False,False
+chl-coronel,CORONEL,CHL,-37.0552,-73.1794,False,False,False,False,False,False
+cmr-bombemgue,BOMBEMGUE,CMR,2.7289,9.8605,False,False,False,False,False,False
+mex-ensenada,ENSENADA,MEX,31.7947,-116.6652,False,False,False,False,False,False
+gnq-malabo,MALABO,GNQ,3.8028,8.7615,False,False,False,False,False,False
+arg-arg-1,,ARG,-34.8518,-57.3804,False,False,False,False,False,False
+usa-portmanatee,PORT MANATEE,USA,27.638,-82.5632,False,False,False,False,False,False
+bhs-nassau,NASSAU,BHS,25.0857,-77.3596,False,False,False,False,False,False
+cod-boma,BOMA,COD,-5.8807,13.0222,False,False,False,False,False,False
+vir-stthomas,ST THOMAS,VIR,18.3116,-64.9587,False,False,False,False,False,False
+omn-duqm,DUQM,OMN,19.6832,57.7259,False,False,False,False,False,False
+nzl-nelson,NELSON,NZL,-41.2597,173.2713,False,False,False,False,False,False
+cub-mariel,MARIEL,CUB,23.0174,-82.7526,False,False,False,False,False,False
+lby-tripoli,TRIPOLI,LBY,32.9506,13.1943,False,False,False,False,False,False
+esp-arrecife,ARRECIFE,ESP,28.953,-13.5503,False,False,False,False,False,False
+cpv-mindelo,MINDELO,CPV,16.8965,-25.0139,False,False,False,False,False,False
+fji-vuda,,FJI,-17.6852,177.3802,False,False,False,False,False,False
+bra-itacoatiara,ITACOATIARA,BRA,-3.183,-58.3924,False,False,False,False,False,False
+usa-palmbeach,PALM BEACH,USA,26.7476,-80.0224,False,False,False,False,False,False
+chl-puntaarenas,PUNTA ARENAS,CHL,-53.1663,-70.8562,False,False,False,False,False,False
+swe-swe-448,SWE-448,SWE,56.5921,12.7458,False,False,False,False,False,False
+chl-arica,ARICA,CHL,-18.4862,-70.3681,False,False,False,False,False,False
+tha-songkhlaanchorage,SONGKHLA ANCHORAGE,THA,7.2668,100.6335,False,False,False,False,False,False
+gbr-falmouth,FALMOUTH,GBR,50.0972,-5.0379,False,False,False,False,False,False
+usa-portangeles,PORT ANGELES,USA,48.1331,-123.3889,False,False,False,False,False,False
+gum-apraharbor,APRA HARBOR,GUM,13.4461,144.6306,False,False,False,False,False,False
+lbr-monrovia,MONROVIA,LBR,6.3489,-10.848,False,False,False,False,False,False
+ven-laguaira,LA GUAIRA,VEN,10.6187,-66.9482,False,False,False,False,False,False
+geo-batumi,BATUMI,GEO,41.6732,41.6537,False,False,False,False,False,False
+fra-roscanvel,ROSCANVEL,FRA,48.3226,-4.5407,False,False,False,False,False,False
+per-salaverry,SALAVERRY,PER,-8.231,-79.0281,False,False,False,False,False,False
+jpn-akita,,JPN,39.7773,139.971,False,False,False,False,False,False
+col-puertobolivar,PUERTO BOLIVAR,COL,12.3106,-72.0138,False,False,False,False,False,False
+png-rabaul,RABAUL,PNG,-4.2548,152.188,False,False,False,False,False,False
+ecu-posorja,POSORJA,ECU,-2.7209,-80.2426,False,False,False,False,False,False
+bra-imbituba,IMBITUBA,BRA,-28.1997,-48.6111,False,False,False,False,False,False
+irn-asaluyeh,ASALUYEH,IRN,27.5266,52.5195,False,False,False,False,False,False
+chn-chn-2317,CHN-2317,CHN,32.0711,121.7751,False,False,False,False,False,False
+nzl-timaru,TIMARU,NZL,-44.3859,171.2588,False,False,False,False,False,False
+idn-kualatanjung,KUALA TANJUNG,IDN,3.3859,99.4586,False,False,False,False,False,False
+mys-tawau,TAWAU,MYS,4.2348,117.8755,False,False,False,False,False,False
+chn-chongming,CHONGMING,CHN,31.5194,121.602,False,False,False,False,False,False
+nzl-bluff,BLUFF,NZL,-46.5981,168.3458,False,False,False,False,False,False
+irl-irl-31,,IRL,52.2439,-6.9722,False,False,False,False,False,False
+idn-manokwari,MANOKWARI,IDN,-0.8864,134.0651,False,False,False,False,False,False
+prt-canical,CANICAL,PRT,32.7358,-16.7336,False,False,False,False,False,False
+gmb-banjul,BANJUL,GMB,13.4615,-16.5603,False,False,False,False,False,False
+phl-zamboanga,ZAMBOANGA,PHL,6.9027,122.071,False,False,False,False,False,False
+chl-coquimbo,COQUIMBO,CHL,-29.9347,-71.3126,False,False,False,False,False,False
+mne-bar,BAR,MNE,42.1061,19.0544,False,False,False,False,False,False
+idn-sorong,SORONG,IDN,-0.8631,131.2185,False,False,False,False,False,False
+som-berbera,BERBERA,SOM,10.4465,44.9558,False,False,False,False,False,False
+usa-usa-1674,,USA,38.8595,-75.0997,False,False,False,False,False,False
+tun-sousse,SOUSSE,TUN,35.8467,10.7011,False,False,False,False,False,False
+jpn-ishikari,ISHIKARI,JPN,43.2368,141.2549,False,False,False,False,False,False
+idn-baubau,BAU BAU,IDN,-5.4439,122.5796,False,False,False,False,False,False
+jpn-tsuruga,TSURUGA,JPN,35.7113,136.0635,False,False,False,False,False,False
+slb-honiara,HONIARA,SLB,-9.4124,159.976,False,False,False,False,False,False
+som-mogadishu,MOGADISHU,SOM,2.011,45.3481,False,False,False,False,False,False
+aus-esperanceaus,,AUS,-33.8872,121.9388,False,False,False,False,False,False
+usa-portlandme,PORTLAND ME,USA,43.651,-70.2301,False,False,False,False,False,False
+slb-noroanchorage,NORO ANCHORAGE,SLB,-8.209,157.1936,False,False,False,False,False,False
+prt-praiadavitoria,PRAIA DA VITORIA,PRT,38.7171,-27.0364,False,False,False,False,False,False
+esp-esp-269,ESP-269,ESP,42.5447,-8.8998,False,False,False,False,False,False
+idn-jayapura,JAYAPURA,IDN,-2.5455,140.7382,False,False,False,False,False,False
+syc-portvictoria,PORT VICTORIA,SYC,-4.581,55.4884,False,False,False,False,False,False
+chn-chn-2374,CHN-2374,CHN,24.472,118.565,False,False,False,False,False,False
+guf-degraddescannes,DEGRAD DES CANNES,GUF,4.8533,-52.2743,False,False,False,False,False,False
+idn-kupang,KUPANG,IDN,-10.1763,123.513,False,False,False,False,False,False
+ago-lobito,LOBITO,AGO,-12.2709,13.5869,False,False,False,False,False,False
+usa-dutchharbor,DUTCH HARBOR,USA,53.9192,-166.4669,False,False,False,False,False,False
+wsm-apia,APIA,WSM,-13.826,-171.7627,False,False,False,False,False,False
+aus-portdalrymple,PORT DALRYMPLE,AUS,-41.1106,146.8221,False,False,False,False,False,False
+idn-pulausambu,PULAU SAMBU,IDN,1.1656,103.8865,False,False,False,False,False,False
+gnq-bata,BATA,GNQ,1.8372,9.7042,False,False,False,False,False,False
+rus-magadan,MAGADAN,RUS,59.5363,150.668,False,False,False,False,False,False
+pyf-papeete,PAPEETE,PYF,-17.5323,-149.5783,False,False,False,False,False,False
+usa-anchorage,ANCHORAGE,USA,61.2248,-149.9095,False,False,False,False,False,False
+dom-puertoplata,PUERTO PLATA,DOM,19.8012,-70.6983,False,False,False,False,False,False
+usa-gulfport,GULFPORT,USA,30.3494,-89.0882,False,False,False,False,False,False
+isl-reydarfjordur,REYDARFJORDUR,ISL,65.0272,-14.1143,False,False,False,False,False,False
+com-moroni,MORONI,COM,-11.6987,43.2467,False,False,False,False,False,False
+ind-ind-103,IND-103,IND,8.376,76.9889,False,False,False,False,False,False
+asm-pagopagoharbor,PAGO PAGO HARBOR,ASM,-14.2797,-170.6749,False,False,False,False,False,False
+grl-nuuk,NUUK,GRL,64.1661,-51.7225,False,False,False,False,False,False
+ton-nukualofa,NUKU ALOFA,TON,-21.1297,-175.1969,False,False,False,False,False,False
+idn-biak,BIAK,IDN,-1.1991,136.0919,False,False,False,False,False,False
+hnd-puertocastilla,PUERTO CASTILLA,HND,16.0047,-85.97,False,False,False,False,False,False
+myt-longoni,LONGONI,MYT,-12.7078,45.1571,False,False,False,False,False,False
+irn-chabahar,CHABAHAR,IRN,25.3014,60.6032,False,False,False,False,False,False
+ind-ind-40,,IND,18.8037,72.4939,False,False,False,False,False,False
+rus-rus-436,RUS-436,RUS,60.02,29.467,False,False,False,False,False,False
+idn-gorontalo,GORONTALO,IDN,0.859,122.7954,False,False,False,False,False,False
+cpv-praia,PRAIA,CPV,14.9001,-23.4931,False,False,False,False,False,False
+chn-liuheng,LIUHENG,CHN,29.76375,122.228,False,False,False,False,False,False
+usa-kodiak,KODIAK,USA,57.7748,-152.4144,False,False,False,False,False,False
+png-madang,MADANG,PNG,-5.2024,145.8103,False,False,False,False,False,False
+esp-lapalma,LA PALMA,ESP,28.6738,-17.767,False,False,False,False,False,False
+pan-almirante,ALMIRANTE,PAN,9.288,-82.391,False,False,False,False,False,False
+mhl-majuro,MAJURO,MHL,7.1276,171.3089,False,False,False,False,False,False
+vut-portvila,PORT VILA,VUT,-17.7561,168.2969,False,False,False,False,False,False
+isl-vestmannaeyjar,VESTMANNAEYJAR,ISL,63.4453,-20.2718,False,False,False,False,False,False
+can-argentia,ARGENTIA,CAN,47.2957,-53.9841,False,False,False,False,False,False
+gnb-bissau,BISSAU,GNB,11.7749,-15.6024,False,False,False,False,False,False
+idn-nabire,,IDN,-3.23,135.5696,False,False,False,False,False,False
+hti-caphaitien,CAP HAITIEN,HTI,19.7588,-72.1934,False,False,False,False,False,False
+blz-blz-4,BLZ-4,BLZ,16.4608,-88.3844,False,False,False,False,False,False
+idn-ternate,TERNATE,IDN,0.7828,127.3955,False,False,False,False,False,False
+blz-belizecityanchorage,BELIZE CITY ANCHORAGE,BLZ,17.4456,-88.1906,False,False,False,False,False,False
+phl-puertoprincesa,PUERTO PRINCESA,PHL,9.7437,118.7276,False,False,False,False,False,False
+can-can-344,CAN-344,CAN,48.9641,-58.0192,False,False,False,False,False,False
+fsm-pohnpei,POHNPEI,FSM,6.9924,158.1693,False,False,False,False,False,False
+per-chancay,CHANCAY,PER,-11.5759,-77.2786,False,False,False,False,False,False
+hkg-hongkong,HONG KONG,HKG,22.2685,114.1184,False,False,False,False,False,False
+mdg-mdg-10,,MDG,-25.0652,46.9661,False,False,False,False,False,False
+plw-melekeok,MELEKEOK,PLW,7.3371,134.4393,False,False,False,False,False,False
+mex-puertomadero,PUERTO MADERO,MEX,14.7094,-92.4019,False,False,False,False,False,False
+arg-ushuaia,USHUAIA,ARG,-54.8086,-68.2701,False,False,False,False,False,False
+idn-idn-328,,IDN,-1.2097,122.6299,False,False,False,False,False,False
+tza-mtwara,MTWARA,TZA,-10.2565,40.2045,False,False,False,False,False,False
+fsm-kosrae,KOSRAE,FSM,5.3502,162.9567,False,False,False,False,False,False
+usa-usa-659,,USA,33.8759,-78.0005,False,False,False,False,False,False
+idn-wini,WINI,IDN,-9.1773,124.4925,False,False,False,False,False,False
+irn-isoico,,IRN,27.0489,55.9759,False,False,False,False,False,False
+arg-sanantonioeste,SAN ANTONIO ESTE,ARG,-40.7967,-64.8884,False,False,False,False,False,False
+gbr-thames,THAMES,GBR,51.5041,0.5026,False,False,False,False,False,False
+ind-ind-76,IND-76,IND,21.7847,72.1412,False,False,False,False,False,False

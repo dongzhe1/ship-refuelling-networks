@@ -338,6 +338,8 @@ def s34_rows(t, key, label, year, scenarios=None):
                           **green_cols(k, tag),
                           "touch_w": float(k.loc[k["touches"].astype(bool), "w_total"].sum() / Wk)
                           if Wk > 0 else np.nan,
+                          "feasible_known_w": float(k.loc[k["req_lb"] <= RANGE, "w_total"].sum() / Wk)
+                          if Wk > 0 and "req_lb" in k else np.nan,
                           "lb_p50": float(frac.median()), "lb_ge50": float((frac >= 0.5).mean()),
                           "p_lb_p50": float(pfrac.median()),
                           "p_lb_ge50": float((pfrac >= 0.5).mean())})

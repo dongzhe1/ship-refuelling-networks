@@ -1,0 +1,9 @@
+{
+ "ships": 28362,
+ "identities": 51524,
+ "multi_identity_pct": 51.95684366405754,
+ "other_identity_kept_pct": 29.75585806489264,
+ "visits_read": 11454663,
+ "visits_kept": 11412173,
+ "dropped_pct": 0.37094063788694615
+}

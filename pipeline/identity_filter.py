@@ -1,11 +1,13 @@
 from __future__ import annotations
 
 import argparse
+import json
 import sys
 from pathlib import Path
 
 import pandas as pd
 
+SHOW = 40
 
 def filter_visits(v: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
     v = v.copy()
@@ -22,6 +24,16 @@ def filter_visits(v: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
     report["kept"] = [int(kept.get((i, d), 0)) for i, d in zip(report["imo"], report["vessel_id"])]
     report["dropped"] = report["n"] - report["kept"]
     return v.loc[keep].drop(columns=["_t", "_op", "_op_first"]), report
+
+
+def facts(report: pd.DataFrame) -> dict:
+    per = report.groupby("imo").size()
+    return {"ships": int(len(per)), "identities": int(len(report)),
+            "multi_identity_pct": float(100 * (per > 1).mean()),
+            "other_identity_kept_pct": float(100 * report.loc[~report["operational"], "kept"].sum()
+                                             / report["kept"].sum()),
+            "visits_read": int(report["n"].sum()), "visits_kept": int(report["kept"].sum()),
+            "dropped_pct": float(100 * report["dropped"].sum() / report["n"].sum())}
 
 
 def main(argv=None):
@@ -42,13 +54,17 @@ def main(argv=None):
     out.mkdir(parents=True, exist_ok=True)
     kept.to_csv(out / "port_visits_0000.csv.gz", index=False, compression="gzip")
     report.to_csv(out / "identity_filter.csv", index=False)
+    with open(out / "facts_identity_filter.json", "w") as fh:
+        fh.write(json.dumps(facts(report), indent=1) + "\n")
     multi = report.groupby("imo").size()
     print(f"{len(v):,} visits, {v['imo'].nunique()} ships; {int((multi > 1).sum())} ships with "
           f"more than one identity; {int(report['dropped'].sum())} visits dropped")
     show = report[report["imo"].isin(multi[multi > 1].index)]
     if len(show):
         print(show[["imo", "vessel_id", "name", "first", "last", "operational", "kept",
-                    "dropped"]].to_string(index=False))
+                    "dropped"]].head(SHOW).to_string(index=False))
+        if len(show) > SHOW:
+            print(f"... {len(show) - SHOW:,} more rows in identity_filter.csv")
 
 
 if __name__ == "__main__":
