@@ -132,6 +132,7 @@ dep_port, arr_port, routed_nm, status
 | Input | Source | Included |
 |---|---|---|
 | Port-visit events | Global Fishing Watch API, CC BY-NC 4.0 | no; `pipeline/pull_port_visits.py` |
+| CO2 reported under EU MRV (check of the fuel model) | EMSA THETIS-MRV, public | no; download (Usage, step 3) |
 | Ship register | Sea-web (S&P Global), licensed | no |
 | External port sets, documented methanol bunkering deliveries, methanol ships with public IMO numbers, transit anchorages, regions | public sources | `pipeline/reference/` |
 | Result files | this code | `results/` |
@@ -246,6 +247,20 @@ bash run.sh collect
 
 `identity_eu_shift.py` also writes the matched ship-years
 (`ship_years_*.csv.gz`); they list ship identifiers and stay out of the bundle.
+
+`results/mrv_check/` sets the calibrated fuel model against the CO2 ships
+report under the EU MRV regulation. Download the annual emission reports
+(one file per reporting year, CSV or XLSX) from EMSA's public THETIS-MRV site
+<https://mrv.emsa.europa.eu/#public/emission-report> into `/data/mrv`, then:
+
+```bash
+python pipeline/mrv_check.py $OUT_DIR --mrv /data/mrv --dest $OUT_DIR/mrv_check \
+       --calibration $CALIBRATION --years 2022-2025
+bash run.sh collect
+```
+
+Further out directories after the first are compared side by side (the
+shipped results also hold a run with every leg on its shortest route).
 
 ---
 

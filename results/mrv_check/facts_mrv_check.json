@@ -1,0 +1,20 @@
+{
+ "out_cape|large_container|2022|median_ratio": 0.8580948660150562,
+ "out_cape|all|2022|median_ratio": 0.9255594052459115,
+ "out_cape|all|2022|n": 11155,
+ "out_cape|large_container|2023|median_ratio": 0.9348169513657533,
+ "out_cape|all|2023|median_ratio": 0.9387393804515896,
+ "out_cape|all|2023|n": 10352,
+ "out_cape|large_container|2024|median_ratio": 0.8739048902054105,
+ "out_cape|all|2024|median_ratio": 0.9432408233476974,
+ "out_cape|all|2024|n": 9862,
+ "out_allid|large_container|2022|median_ratio": 0.854720241252302,
+ "out_allid|all|2022|median_ratio": 0.9212601953696162,
+ "out_allid|all|2022|n": 11155,
+ "out_allid|large_container|2023|median_ratio": 0.9017647987510407,
+ "out_allid|all|2023|median_ratio": 0.9297529789351668,
+ "out_allid|all|2023|n": 10352,
+ "out_allid|large_container|2024|median_ratio": 0.5375604528932248,
+ "out_allid|all|2024|median_ratio": 0.852287814562009,
+ "out_allid|all|2024|n": 9862
+}

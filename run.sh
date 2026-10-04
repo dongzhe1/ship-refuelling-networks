@@ -21,6 +21,10 @@ collect() {
     if [ -f "$out/methanol_pilot_ext/pull_clean/identity_filter.csv" ]; then
         cp "$out/methanol_pilot_ext/pull_clean/identity_filter.csv" "$dest/pilot_ext/"
     fi
+    if [ -f "$out/mrv_check/mrv_check.csv" ]; then
+        mkdir -p "$dest/mrv_check"
+        cp "$out/mrv_check/mrv_check.csv" "$out/mrv_check/facts_mrv_check.json" "$dest/mrv_check/"
+    fi
     if [ -f "$out/identity_eu_shift/identity_eu_shift.csv" ]; then
         mkdir -p "$dest/identity_eu_shift"
         cp "$out/identity_eu_shift/identity_eu_shift.csv" "$out/identity_eu_shift/facts_identity_eu_shift.json" \
