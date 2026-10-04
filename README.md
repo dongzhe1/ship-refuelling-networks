@@ -65,8 +65,8 @@ bash run.sh fake
 
 This generates the fake inputs under `fake/inputs/`, in the same formats as the
 real data (port visits, ship register, calibration factors, route cache,
-methanol-ship pull), runs all 36 steps of the pipeline on them with small
-settings, and writes 75 result files to `fake/results/`.
+methanol-ship pull), runs all 39 steps of the pipeline on them with small
+settings, and writes 78 result files to `fake/results/`.
 
 Expected output: one line per step, ending with the location of the results:
 
@@ -79,7 +79,7 @@ Expected output: one line per step, ending with the location of the results:
 results -> .../fake/results
 ```
 
-**Expected run time:** under a minute on a normal desktop computer (27 seconds on 16 cores).
+**Expected run time:** under a minute on a normal desktop computer (35 seconds on 16 cores).
 
 ---
 
@@ -166,7 +166,14 @@ visits kept, and 0.37% of visits were dropped
 
 **Legs and ports.** Consecutive visits of a ship form legs, measured on routed
 sea distance (`searoute`), or on the great circle where a route cannot be
-sailed in the time available. A leg breaks the chain of calls when the ship is
+sailed in the time available. A leg whose shortest route crosses the whole Red
+Sea (Bab-el-Mandeb and the Suez Canal) is also routed round the Cape of Good
+Hope, and keeps whichever route implies a speed closer, in ratio, to the
+ship's usual speed: the median implied speed of its other routed legs of at
+least 500 nm in the same year, or in any year if that year has fewer than
+three (`pipeline/red_sea_routes.py`, `build_stops.py --cape`). The rule sends
+4-9% of container ships' Red Sea legs round the Cape in each year 2018-2022
+and 69% in 2024 (`results/cape_routing.csv`). A leg breaks the chain of calls when the ship is
 silent for more than 120 days or would need more than 30 knots. Anchorages
 within 30 km in the same country are merged into refuelling nodes.
 
@@ -226,6 +233,19 @@ python pipeline/pull_port_visits.py /data/gfw_first --imos imos.txt --start 2018
 python pipeline/audit_identities.py /data/gfw_first $OUT_DIR/identity_audit --n 300
 bash run.sh collect
 ```
+
+`results/identity_eu_shift/` compares the main run with a run on that
+first-identity pull, ship-year by ship-year, on the energy FuelEU counts:
+
+```bash
+GFW_DIR=/data/gfw_first OUT_DIR=/data/out_first bash run.sh full
+python pipeline/identity_eu_shift.py /data/out_first $OUT_DIR $OUT_DIR/identity_eu_shift \
+       --calibration $CALIBRATION
+bash run.sh collect
+```
+
+`identity_eu_shift.py` also writes the matched ship-years
+(`ship_years_*.csv.gz`); they list ship identifiers and stay out of the bundle.
 
 ---
 

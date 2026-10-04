@@ -21,6 +21,11 @@ collect() {
     if [ -f "$out/methanol_pilot_ext/pull_clean/identity_filter.csv" ]; then
         cp "$out/methanol_pilot_ext/pull_clean/identity_filter.csv" "$dest/pilot_ext/"
     fi
+    if [ -f "$out/identity_eu_shift/identity_eu_shift.csv" ]; then
+        mkdir -p "$dest/identity_eu_shift"
+        cp "$out/identity_eu_shift/identity_eu_shift.csv" "$out/identity_eu_shift/facts_identity_eu_shift.json" \
+            "$dest/identity_eu_shift/"
+    fi
     if [ -f "$out/identity_audit/facts_identity_audit.json" ]; then
         mkdir -p "$dest/identity_audit_v3"
         cp "$out/identity_audit/facts_identity_audit.json" "$out/identity_audit/identity_audit_years.csv" \
@@ -39,9 +44,11 @@ fake() {
     mkdir -p "$out/results" && cp "$gfw/facts_identity_filter.json" "$out/results/"
     run build_stops.py "$out" --gfw "$gfw" --jobs "$J"
     run route_distances.py "$out" --cache "$rc" --jobs 1
-    run build_stops.py "$out" --gfw "$gfw" --routes "$out/route_distances.csv" --jobs "$J"
+    run red_sea_routes.py "$out" --jobs 1
+    run build_stops.py "$out" --gfw "$gfw" --routes "$out/route_distances.csv" --cape --jobs "$J"
     run nodes.py "$out"
     run vessels.py "$out" --seaweb "$sw"
+    run cape_summary.py "$out"
     run select_ports.py "$out" --years 2019,2022 --ranges 3000,7000 --nmax 6 --candidates 20 --jobs "$J"
     run select_ports.py "$out" --years 2022 --ranges 7000 --nmax 3 --candidates 20 --jobs 1 \
         --initial-key "greedy|2019|7000|all" --initial-n 4
@@ -69,7 +76,8 @@ fake() {
     run identity_filter.py "$pull" "$pd/pull_clean"
     run build_stops.py "$pd" --gfw "$pd/pull_clean" --jobs 1
     run route_distances.py "$pd" --cache "$out/route_distances.csv" "$rc" --jobs 1
-    run build_stops.py "$pd" --gfw "$pd/pull_clean" --routes "$pd/route_distances.csv" --jobs 1
+    run red_sea_routes.py "$pd" --jobs 1
+    run build_stops.py "$pd" --gfw "$pd/pull_clean" --routes "$pd/route_distances.csv" --cape --jobs 1
     run pilot.py sets "$pd" --main "$out" --ships "$pull/ships.csv" --train-years 2019,2022 --nmax 6
     run evaluate.py "$pd" --ns 4 --ranges 3000,7000,20000 --years 2023 --ship-years-ns 4 --jobs 1
     run select_ports.py "$out" --years 2022 --methods "" --tag methanol --jobs 1
@@ -100,9 +108,11 @@ full() {
     mkdir -p "$out/results" && cp "$gfw/facts_identity_filter.json" "$out/results/"
     run build_stops.py "$out" --gfw "$gfw" --jobs "$J"
     run route_distances.py "$out" --cache ${rc[@]+"${rc[@]}"} --jobs "$J"
-    run build_stops.py "$out" --gfw "$gfw" --routes "$out/route_distances.csv" --jobs "$J"
+    run red_sea_routes.py "$out" --jobs "$J"
+    run build_stops.py "$out" --gfw "$gfw" --routes "$out/route_distances.csv" --cape --jobs "$J"
     run nodes.py "$out"
     run vessels.py "$out" --seaweb "$SEAWEB"
+    run cape_summary.py "$out"
     local c=(--years 2018-2025 --ranges 5000,7000,10000 --nmax 50 --candidates 1500 --jobs "$J")
     run select_ports.py "$out" "${c[@]}"
     run select_ports.py "$out" "${c[@]}" --groups container --append
@@ -144,7 +154,8 @@ full() {
         run identity_filter.py "$pull" "$pd/pull_clean"
         run build_stops.py "$pd" --gfw "$pd/pull_clean" --jobs "$J"
         run route_distances.py "$pd" --cache "$out/route_distances.csv" ${rc[@]+"${rc[@]}"} --jobs "$J"
-        run build_stops.py "$pd" --gfw "$pd/pull_clean" --routes "$pd/route_distances.csv" --jobs "$J"
+        run red_sea_routes.py "$pd" --jobs "$J"
+        run build_stops.py "$pd" --gfw "$pd/pull_clean" --routes "$pd/route_distances.csv" --cape --jobs "$J"
         run pilot.py sets "$pd" --main "$out" --ships "$ships"
         run evaluate.py "$pd" --ns 10,20 --years 2023-2026 --ship-years-ns 10,20 --jobs "$J"
         run pilot.py analyze "$pd" --main "$out" --pull "$pull" --ships "$ships"

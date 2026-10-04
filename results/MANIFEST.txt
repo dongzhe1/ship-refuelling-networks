@@ -1,36 +1,39 @@
 file rows sha256[:16]
-backup.csv                                           735 82459f22012caf20
-coverage.csv                                      156800 28d75ab23bfaf17c
-coverage_bunker.csv                                  784 c825a5ed17aa0d8e
-coverage_km15.csv                                   1512 6fe91b9ec295cd92
-coverage_km45.csv                                   1512 742507a0e9fdd728
-coverage_methanol.csv                                784 06b49dd4c1fa1299
-coverage_notransit.csv                              1512 6b8a7755b2891c39
-coverage_slow.csv                                   5544 76c191e0dbbe322c
-criteria.csv                                          14 01f889b33a133fbb
-detour.csv                                            30 1a300a9069a51c9d
-edge_map.csv                                       21774 5e0945f54cb4f806
-edge_map_nodes.csv                                   562 93f617f3314c5a26
-endurance_operating.csv                                7 1dcf88119bc4686d
+backup.csv                                           735 cddb6cbac2de3542
+cape_routing.csv                                      63 1ea8d90f6a3f503d
+coverage.csv                                      156800 5711ca9902582fa3
+coverage_bunker.csv                                  784 d9111dc79e15388b
+coverage_km15.csv                                   1512 403b69e125250c10
+coverage_km45.csv                                   1512 ed93c3c26426e0c9
+coverage_methanol.csv                                784 0c5734b87bbc5762
+coverage_notransit.csv                              1512 f68b39d12df84471
+coverage_slow.csv                                   5544 9cb16b2fa7e124d2
+criteria.csv                                          14 3c1ecb1405ec5d59
+detour.csv                                            30 95016b7c643eed9c
+edge_map.csv                                       21138 1f89d6f799310327
+edge_map_nodes.csv                                   541 66d2f0bc56b475f8
+endurance_operating.csv                                7 e3cbd7948f511e6e
 endurance_summary.csv                                  7 b7bafc3e66f3e74a
-facts_analysis.json                                      f87799e496ec4eed
-facts_edge_map.json                                      fa2e70a81df01768
-facts_evaluate.json                                      08bb642bf648f4e2
-facts_evaluate_bunker.json                               1ffba8645fb1e487
-facts_evaluate_km15.json                                 c06b9ffc8128186c
-facts_evaluate_km45.json                                 742d531b51f80aed
-facts_evaluate_methanol.json                             ab345b1c7d4bdd56
-facts_evaluate_notransit.json                            6854baf2e58dfcf8
-facts_evaluate_slow.json                                 0ce106d66279769a
-facts_fueleu.json                                        42fb9741eb868b6d
+facts_analysis.json                                      c5987187f20104e7
+facts_cape_routing.json                                  476eb2eaf72e6b96
+facts_edge_map.json                                      706c22858d3a80ae
+facts_evaluate.json                                      3cd4fc1feede6ff6
+facts_evaluate_bunker.json                               1e2d92ef91b170ab
+facts_evaluate_km15.json                                 729dafb5286e90ea
+facts_evaluate_km45.json                                 32d2c54f09eb9c57
+facts_evaluate_methanol.json                             5f5867169a0ac9e5
+facts_evaluate_notransit.json                            e0826dc44eaeae97
+facts_evaluate_slow.json                                 5102d40ec88775e1
+facts_fueleu.json                                        27a9a985337f46d0
 facts_identity_filter.json                               a0ce32209f403ded
-facts_loss_by_gap.json                                   56d9781230543e2c
-facts_loss_by_gap_dualfuel.json                          c767fb1e318d6b03
-facts_methanol_dated.json                                ce277d62f86a71d4
+facts_loss_by_gap.json                                   1688b31df4efa6cc
+facts_loss_by_gap_dualfuel.json                          3b97dc80473383bf
+facts_methanol_dated.json                                f7c78feba639869d
 facts_nodes.json                                         ff20843e914db337
 facts_nodes_km15.json                                    c49d5da2648dbfad
 facts_nodes_km45.json                                    0da74d0eedaf2b06
-facts_route_distances.json                               270d3451107bcdce
+facts_red_sea_routes.json                                c08d0bf3a2c2a9ff
+facts_route_distances.json                               3bd32c9160210893
 facts_select_dualfuel.json                               73815bd5a95bc5fe
 facts_select_ports.json                                  5275b5e776fc00e4
 facts_select_ports_backup.json                           59787aafc526a449
@@ -41,53 +44,55 @@ facts_select_ports_km15.json                             e65c96770876186b
 facts_select_ports_km45.json                             e65c96770876186b
 facts_select_ports_methanol.json                         7fb7de99e1d1e51b
 facts_select_ports_notransit.json                        e65c96770876186b
-facts_stops.json                                         e1f5f70419f73c13
-facts_stops_gc.json                                      1a717169308c7f75
-facts_supplement.json                                    398997006f1e92e4
+facts_stops.json                                         9dc0d225dcac7c77
+facts_stops_gc.json                                      734429bcf2bdd8df
+facts_supplement.json                                    ea5c536538d10dbf
 facts_vessels.json                                       2b9dff3eed78f27f
-fueleu_network.csv                                  1632 c094dca3f8dd651a
-green_share.csv                                     2184 5bf2f43bb1d63e04
+fueleu_network.csv                                  1632 546024706a624e59
+green_share.csv                                     2184 afa0cde55bf01727
 identity_audit_v3/facts_identity_audit.json              5ea8bbdcedb8591b
 identity_audit_v3/identity_audit_years.csv             8 b7648113c6cddbb7
-loss_by_gap.csv                                      112 1162c30fee10d7d8
-loss_by_gap_dualfuel.csv                             336 5876a3a71a59fa21
-methanol_dated.csv                                    84 fc17611ca4a529f5
+identity_eu_shift/facts_identity_eu_shift.json           775a26a9c6bbcf84
+identity_eu_shift/identity_eu_shift.csv               36 44996e864c54dc72
+loss_by_gap.csv                                      112 021a0f27f2fa3f2c
+loss_by_gap_dualfuel.csv                             336 8f91f1efda7fcc71
+methanol_dated.csv                                    84 30806c88b3ddd64f
 methanol_dated_nodes.csv                              49 ee8c4dd57f7f851b
-methanol_dated_pilot.csv                              32 48b5de1b8a520b8b
+methanol_dated_pilot.csv                              32 fd2208fb9f315d0a
 methanol_dated_sets.csv                               16 4f26d7fd010480de
-observation_span.csv                                  36 2403cbeb7a79ea91
-own_endurance.csv                                   6272 4181d76b1fafe27e
-own_endurance_operating.csv                           63 0c6e4caa83d44512
-pilot/facts_pilot.json                                   63b23b6ed88ca728
-pilot/facts_pilot_breakdown.json                         c3e2e95b53ffe382
-pilot/pilot_breakdown.csv                            135 ec8cd5fbb0247ecc
-pilot/pilot_breakdown_owner.csv                        9 60af0ce5ecb4364e
-pilot/pilot_compare.csv                               45 e7e1021c1331f30e
-pilot/pilot_sets.csv                                 225 549c8fff7c71b87e
+observation_span.csv                                  36 6d22a9688cdf0139
+own_endurance.csv                                   6272 479b1f3870e4060b
+own_endurance_operating.csv                           63 b98de048ff26b947
+pilot/facts_pilot.json                                   db20b179035e1e26
+pilot/facts_pilot_breakdown.json                         f58776273aa7534f
+pilot/pilot_breakdown.csv                            135 b5613596827c4cf7
+pilot/pilot_breakdown_owner.csv                        9 c5e376ef61225eb8
+pilot/pilot_compare.csv                               45 e1f9afba70cefacf
+pilot/pilot_sets.csv                                 225 17caa87b75b6d34b
 pilot/pilot_ships.csv                                 19 d0950af14924c0e4
-pilot_ext/facts_pilot.json                               c575cf0370e1fef0
-pilot_ext/facts_pilot_breakdown.json                     a359212072a30b71
+pilot_ext/facts_pilot.json                               37b1420718b2d6c0
+pilot_ext/facts_pilot_breakdown.json                     934532716a3e31f5
 pilot_ext/identity_filter.csv                         51 9b4250a6b1283097
-pilot_ext/pilot_breakdown.csv                        135 5ca9ec50ac20c1d8
-pilot_ext/pilot_breakdown_owner.csv                   63 9c170e1eea5ccb20
-pilot_ext/pilot_compare.csv                           45 4eb7a9ebeba1e8c3
-pilot_ext/pilot_sets.csv                             225 74bcb03b2bff12a7
+pilot_ext/pilot_breakdown.csv                        135 297e8bedb50a17cf
+pilot_ext/pilot_breakdown_owner.csv                   63 5bd6dfbf0b3fe65d
+pilot_ext/pilot_compare.csv                           45 0d14e44e0283e7ee
+pilot_ext/pilot_sets.csv                             225 bb7483504f9d026e
 pilot_ext/pilot_ships.csv                             41 16b6829d2408fc22
-redeploy_loss.csv                                    245 4393785e865b87d0
-region_loss.csv                                       17 dbc0fee7b8178ff7
-required_range.csv                                  6272 fe02b6c5c478805e
-required_range_cdf.csv                              5929 45fbd3fef359271a
-reselection.csv                                       26 cd62b94c5df34a0f
+redeploy_loss.csv                                    245 2a2dd6ce4b7ed674
+region_loss.csv                                       17 7b9e4099416387bc
+required_range.csv                                  6272 af7216063ea3ea6a
+required_range_cdf.csv                              5929 d866c83ead707b08
+reselection.csv                                       26 ba25bc366bf3d000
 reselection_overlap.csv                               12 682d25f3f769c15c
-segment_coverage.csv                                 252 d152f5245a92d685
-sensitivity.csv                                        6 3b6c8a59429dbf14
-staleness.csv                                      21504 56ecb947bd58b1e4
-staleness_by_lag.csv                                 720 252517ca1a7b000b
-stranding.csv                                        147 552bf3374f8acbcd
-stranding_whole_year.csv                             147 10c43537bc836f0a
-tank_sensitivity.csv                                1512 53fddd4ae385c0e3
+segment_coverage.csv                                 252 0e99d4a368d4b6b7
+sensitivity.csv                                        6 c40db5b48f9c929e
+staleness.csv                                      21504 43e7031e38908390
+staleness_by_lag.csv                                 720 d6fea4dc6d79c60b
+stranding.csv                                        147 1b6dbd3549e6ef11
+stranding_whole_year.csv                             147 67fcedd533502f1d
+tank_sensitivity.csv                                1512 cc129a1181fe9a5e
 tank_space.csv                                         3 59f6dcbb1c9f8b0f
-tradeoff.csv                                          96 fd5b1801151beea7
-transfer_terms.csv                                135485 fa45e56b39377d35
-volume_vs_greedy.csv                                1792 20a9ac963ff04d7c
-yap_comparison.csv                                 27048 a2f66ecae48ab5bf
+tradeoff.csv                                          96 a5e6ddbbcf8a1830
+transfer_terms.csv                                135485 19d17e24effa8984
+volume_vs_greedy.csv                                1792 e723ea28acac994a
+yap_comparison.csv                                 27048 afd1512b413179b3

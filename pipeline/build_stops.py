@@ -11,7 +11,7 @@ import pandas as pd
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from common import (DEFAULT_JOBS, LEG_BREAK_GAP, LEG_BREAK_SPEED, LEG_OK,
                     LEG_ORIGIN, MAX_DURATION_HRS, MAX_IMPLIED_KN, MIN_CONFIDENCE,
-                    haversine_nm_vec, leg_status, normalise_imo, to_utc)
+                    haversine_nm_vec, leg_status, normalise_imo, require, to_utc)
 from facts import emit
 
 HERE = Path(__file__).resolve().parent
@@ -25,6 +25,9 @@ REQUIRED = {"imo", "start", "end", "lat", "lon", "start_anchorage_id",
 
 DETOUR_MAX_GC_NM = 100.0
 DETOUR_MAX_RATIO = 3.0
+CAPE_REF_MIN_NM = 500.0
+CAPE_REF_MIN_KN = 3.0
+CAPE_REF_MIN_LEGS = 3
 
 OUT_COLS = ["imo", "visit_start", "visit_end", "anchorage_id", "end_anchorage_id",
             "iso3", "name", "lat", "lon", "at_dock", "transit", "leg_from",
@@ -83,8 +86,35 @@ def load_visits(shards, jobs):
     return df, counts
 
 
+def cape_choice(imo, year, leg_nm, sea_hours, routed_use, cape_nm) -> np.ndarray:
+    with np.errstate(divide="ignore", invalid="ignore"):
+        v = leg_nm / sea_hours
+        cand = routed_use & ~np.isnan(cape_nm) & (sea_hours > 0)
+        ref_ok = (routed_use & ~cand & (leg_nm >= CAPE_REF_MIN_NM) & (v >= CAPE_REF_MIN_KN)
+                  & (v <= MAX_IMPLIED_KN))
+    ref = pd.DataFrame({"imo": imo[ref_ok], "year": year[ref_ok], "v": v[ref_ok]})
+    by_year = ref.groupby(["imo", "year"])["v"].agg(["median", "size"])
+    by_year = by_year[by_year["size"] >= CAPE_REF_MIN_LEGS]["median"]
+    by_ship = ref.groupby("imo")["v"].agg(["median", "size"])
+    by_ship = by_ship[by_ship["size"] >= CAPE_REF_MIN_LEGS]["median"]
+    idx = np.flatnonzero(cand)
+    key = pd.MultiIndex.from_arrays([imo[idx], year[idx]])
+    v_ref = by_year.reindex(key).to_numpy(float, copy=True)
+    miss = np.isnan(v_ref)
+    v_ref[miss] = by_ship.reindex(imo[idx][miss]).to_numpy(float)
+    v_s = v[idx]
+    v_c = cape_nm[idx] / sea_hours[idx]
+    with np.errstate(divide="ignore", invalid="ignore"):
+        go = ((v_c <= MAX_IMPLIED_KN) & ~np.isnan(v_ref)
+              & (np.abs(np.log(v_c / v_ref)) < np.abs(np.log(v_s / v_ref))))
+    out = np.zeros(len(leg_nm), dtype=bool)
+    out[idx[go]] = True
+    return out
+
+
 def build(df: pd.DataFrame, routes: pd.DataFrame | None = None,
-          transit_ids: set[str] | None = None) -> pd.DataFrame:
+          transit_ids: set[str] | None = None,
+          cape: pd.DataFrame | None = None) -> pd.DataFrame:
     imo = df["imo"].to_numpy()
     first = np.r_[True, imo[1:] != imo[:-1]]
 
@@ -138,6 +168,20 @@ def build(df: pd.DataFrame, routes: pd.DataFrame | None = None,
         out.loc[use, "distance_source"] = "routed"
         out.loc[too_fast, "distance_source"] = "great_circle_route_too_fast"
         out.loc[detour, "distance_source"] = "great_circle_route_detour"
+        if cape is not None:
+            c = cape[(cape["status"] == "ok") & cape["cape_nm"].notna()]
+            c = c.drop_duplicates(subset=["dep_port", "arr_port"])
+            mc = out[["leg_from", "anchorage_id"]].merge(
+                c[["dep_port", "arr_port", "cape_nm"]],
+                left_on=["leg_from", "anchorage_id"], right_on=["dep_port", "arr_port"],
+                how="left")
+            cape_nm = mc["cape_nm"].to_numpy(float)
+            red = use & ~np.isnan(cape_nm)
+            go = cape_choice(out["imo"].to_numpy(), df["start"].dt.year.to_numpy(),
+                             out["leg_nm"].to_numpy(float), sea_hours, use, cape_nm)
+            out.loc[red, "distance_source"] = "routed_red_sea"
+            out.loc[go, "leg_nm"] = cape_nm[go]
+            out.loc[go, "distance_source"] = "routed_cape"
 
     with np.errstate(divide="ignore", invalid="ignore"):
         out["implied_kn"] = np.where(out["sea_hours"] > 0,
@@ -169,10 +213,12 @@ def summarise(stops: pd.DataFrame, counts: dict) -> dict:
         "legs_break_gap": int(vc.get(LEG_BREAK_GAP, 0)),
         "legs_break_speed": int(vc.get(LEG_BREAK_SPEED, 0)),
         "legs_slow": int(legs["slow"].sum()),
-        "legs_routed_pct": 100.0 * float((legs["distance_source"] == "routed").mean())
+        "legs_routed_pct": 100.0 * float(legs["distance_source"].str.startswith("routed").mean())
         if len(legs) else 0.0,
         "legs_route_too_fast": int((legs["distance_source"] == "great_circle_route_too_fast").sum()),
         "legs_route_detour": int((legs["distance_source"] == "great_circle_route_detour").sum()),
+        "legs_red_sea": int(legs["distance_source"].isin(["routed_red_sea", "routed_cape"]).sum()),
+        "legs_cape": int((legs["distance_source"] == "routed_cape").sum()),
         "stops_at_transit_pct": 100.0 * float(stops["transit"].mean()) if len(stops) else 0.0,
         "median_leg_nm": float(legs.loc[legs["leg_status"] == LEG_OK, "leg_nm"].median())
         if (legs["leg_status"] == LEG_OK).any() else 0.0,
@@ -185,6 +231,16 @@ def summarise(stops: pd.DataFrame, counts: dict) -> dict:
     print(f"  routed distance on {facts['legs_routed_pct']:.1f}% of legs; "
           f"great circle kept for {facts['legs_route_too_fast']:,} routes impossible "
           f"in the time taken and {facts['legs_route_detour']:,} short-hop detours")
+    if facts["legs_red_sea"]:
+        yr = legs["visit_start"].dt.year
+        red = legs["distance_source"].isin(["routed_red_sea", "routed_cape"])
+        cape = legs["distance_source"] == "routed_cape"
+        by = pd.DataFrame({"red": red.groupby(yr).sum(), "cape": cape.groupby(yr).sum()})
+        for y, r in by.iterrows():
+            facts[f"legs_red_sea_{y}"], facts[f"legs_cape_{y}"] = int(r["red"]), int(r["cape"])
+        print(f"  Red Sea legs: {facts['legs_red_sea']:,}, of which round the Cape "
+              f"{facts['legs_cape']:,}; by year (Cape / Red Sea): "
+              + ", ".join(f"{y} {int(r['cape']):,}/{int(r['red']):,}" for y, r in by.iterrows()))
     print(f"  stops at the transit anchorages: {facts['stops_at_transit_pct']:.2f}%"
           f"  (kept here; reference drops them)")
     return facts
@@ -197,6 +253,8 @@ def main(argv=None):
                     help="directory holding port_visits_*.csv.gz (read only)")
     ap.add_argument("--routes", type=Path, default=None,
                     help="route_distances.csv from route_distances.py")
+    ap.add_argument("--cape", action="store_true",
+                    help="route Red Sea legs round the Cape where the time taken fits")
     ap.add_argument("--out", default=None)
     ap.add_argument("--jobs", type=int, default=DEFAULT_JOBS)
     a = ap.parse_args(argv)
@@ -222,7 +280,16 @@ def main(argv=None):
                                               "status": str})
         print(f"routes: {len(routes):,} anchorage pairs from {a.routes.name}")
 
-    stops = build(df, routes, read_transit_ids())
+    cape = None
+    if a.cape:
+        if routes is None:
+            sys.exit("--cape needs --routes")
+        require(out_dir, "red_sea_routes.csv", stage="red_sea_routes.py")
+        cape = pd.read_csv(out_dir / "red_sea_routes.csv", dtype={"dep_port": str, "arr_port": str,
+                                                                   "status": str})
+        print(f"red sea: {len(cape):,} anchorage pairs cross it (red_sea_routes.csv)")
+
+    stops = build(df, routes, read_transit_ids(), cape)
     del df
     facts = summarise(stops, counts)
 

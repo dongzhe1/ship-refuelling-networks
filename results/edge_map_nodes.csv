@@ -133,10 +133,8 @@ chn-zhoushan,ZHOUSHAN,CHN,30.1381,122.302,False,False,False,False,False,False
 ury-montevideo,MONTEVIDEO,URY,-35.0423,-56.0669,False,False,False,False,False,False
 tur-mersin,MERSIN,TUR,36.7123,34.6993,False,False,False,False,False,False
 ita-genoa,GENOA,ITA,44.3628,8.9992,False,False,False,False,False,False
-chn-zhapu,ZHAPU,CHN,30.5768,121.2716,False,False,False,False,False,False
 bra-aratu,ARATU,BRA,-13.046,-38.5982,False,False,False,False,False,False
 mar-casablanca,CASABLANCA,MAR,33.7056,-7.5923,False,False,False,False,False,False
-tur-rumelifeneri,RUMELIFENERI,TUR,41.2355,29.1183,False,False,False,False,False,False
 jpn-ube,UBE,JPN,33.8773,131.2227,False,False,False,False,False,False
 jpn-kokura,KOKURA,JPN,34.0432,130.8352,False,False,False,False,False,False
 jpn-hakata,HAKATA,JPN,33.6589,130.2598,False,False,False,False,False,False
@@ -179,7 +177,6 @@ fra-saintnazaire,SAINT NAZAIRE,FRA,47.2679,-2.2017,False,False,False,False,False
 ita-livorno,LIVORNO,ITA,43.4853,10.2579,False,False,False,False,False,False
 dom-riohaina,RIO HAINA,DOM,18.401,-70.0219,False,False,False,False,False,False
 usa-charleston,CHARLESTON,USA,32.7622,-79.8791,False,False,False,False,False,False
-chn-jinzhou,JINZHOU,CHN,40.683,121.1397,False,False,False,False,False,False
 usa-jeffersonbeach,JEFFERSON BEACH,USA,39.2023,-76.4818,False,False,False,False,False,False
 ind-mangalore,MANGALORE,IND,12.9261,74.8072,False,False,False,False,False,False
 egy-suezcanal,SUEZ CANAL,EGY,30.4328,32.354,False,False,False,False,False,False
@@ -301,7 +298,6 @@ usa-miami,MIAMI,USA,25.7822,-80.085,False,False,False,False,False,False
 deu-deu-626,DEU-626,DEU,53.6859,8.0691,False,False,False,False,False,False
 can-shearwater,SHEARWATER,CAN,44.6036,-63.5102,False,False,False,False,False,False
 grc-thessaloniki,THESSALONIKI,GRC,40.5958,22.9142,False,False,False,False,False,False
-dza-skikda,SKIKDA,DZA,36.9207,6.9344,False,False,False,False,False,False
 lby-misurata,MISURATA,LBY,32.4015,15.2983,False,False,False,False,False,False
 qat-doha,DOHA,QAT,25.3234,51.8289,False,False,False,False,False,False
 can-robertsbank,ROBERTS BANK,CAN,49.0106,-123.1678,False,False,False,False,False,False
@@ -317,7 +313,6 @@ gbr-belfast,BELFAST,GBR,54.6333,-5.8827,False,False,False,False,False,False
 rus-kaliningrad,KALININGRAD,RUS,54.6635,19.777,False,False,False,False,False,False
 tur-samsun,SAMSUN,TUR,41.3444,36.3614,False,False,False,False,False,False
 usa-boston,BOSTON,USA,42.3423,-70.9633,False,False,False,False,False,False
-bgd-monglaanchorage,MONGLA ANCHORAGE,BGD,22.2593,89.5806,False,False,False,False,False,False
 ben-cotonou,COTONOU,BEN,6.2602,2.5026,False,False,False,False,False,False
 dza-bejaia,BEJAIA,DZA,36.7422,5.1462,False,False,False,False,False,False
 mys-kotakinabalu,KOTA KINABALU,MYS,6.027,116.0631,False,False,False,False,False,False
@@ -338,8 +333,6 @@ kor-okpo,OKPO,KOR,34.8639,128.8286,False,False,False,False,False,False
 brb-bridgetown,BRIDGETOWN,BRB,13.1006,-59.6406,False,False,False,False,False,False
 usa-wilmingtonnc,WILMINGTON NC,USA,34.171,-77.9502,False,False,False,False,False,False
 irl-cork,CORK,IRL,51.7344,-8.2584,False,False,False,False,False,False
-jpn-matsuyama,MATSUYAMA,JPN,33.8573,132.6675,False,False,False,False,False,False
-hti-portauprince,PORT AU PRINCE,HTI,18.5705,-72.4038,False,False,False,False,False,False
 esp-cadiz,CADIZ,ESP,36.5674,-6.3416,False,False,False,False,False,False
 esp-santander,SANTANDER,ESP,43.4963,-3.7563,False,False,False,False,False,False
 nzl-napier,NAPIER,NZL,-39.4509,176.9697,False,False,False,False,False,False
@@ -427,7 +420,6 @@ tun-sfax,SFAX,TUN,34.6624,10.842,False,False,False,False,False,False
 bra-manaus,,BRA,-3.138,-59.9185,False,False,False,False,False,False
 atg-stjohns,ST JOHNS,ATG,17.1565,-61.9135,False,False,False,False,False,False
 can-victoria,VICTORIA,CAN,48.3379,-123.36,False,False,False,False,False,False
-tun-rades,RADES,TUN,36.8293,10.4368,False,False,False,False,False,False
 rus-petropavlovsk,PETROPAVLOVSK,RUS,52.9758,158.6545,False,False,False,False,False,False
 prt-pontadelgada,PONTA DELGADA,PRT,37.736,-25.6366,False,False,False,False,False,False
 vnm-quinhon,QUI NHON,VNM,13.7748,109.2493,False,False,False,False,False,False
@@ -439,10 +431,8 @@ chl-coronel,CORONEL,CHL,-37.0552,-73.1794,False,False,False,False,False,False
 cmr-bombemgue,BOMBEMGUE,CMR,2.7289,9.8605,False,False,False,False,False,False
 mex-ensenada,ENSENADA,MEX,31.7947,-116.6652,False,False,False,False,False,False
 gnq-malabo,MALABO,GNQ,3.8028,8.7615,False,False,False,False,False,False
-arg-arg-1,,ARG,-34.8518,-57.3804,False,False,False,False,False,False
 usa-portmanatee,PORT MANATEE,USA,27.638,-82.5632,False,False,False,False,False,False
 bhs-nassau,NASSAU,BHS,25.0857,-77.3596,False,False,False,False,False,False
-cod-boma,BOMA,COD,-5.8807,13.0222,False,False,False,False,False,False
 vir-stthomas,ST THOMAS,VIR,18.3116,-64.9587,False,False,False,False,False,False
 omn-duqm,DUQM,OMN,19.6832,57.7259,False,False,False,False,False,False
 nzl-nelson,NELSON,NZL,-41.2597,173.2713,False,False,False,False,False,False
@@ -479,18 +469,13 @@ chn-chongming,CHONGMING,CHN,31.5194,121.602,False,False,False,False,False,False
 nzl-bluff,BLUFF,NZL,-46.5981,168.3458,False,False,False,False,False,False
 irl-irl-31,,IRL,52.2439,-6.9722,False,False,False,False,False,False
 idn-manokwari,MANOKWARI,IDN,-0.8864,134.0651,False,False,False,False,False,False
-prt-canical,CANICAL,PRT,32.7358,-16.7336,False,False,False,False,False,False
 gmb-banjul,BANJUL,GMB,13.4615,-16.5603,False,False,False,False,False,False
 phl-zamboanga,ZAMBOANGA,PHL,6.9027,122.071,False,False,False,False,False,False
 chl-coquimbo,COQUIMBO,CHL,-29.9347,-71.3126,False,False,False,False,False,False
-mne-bar,BAR,MNE,42.1061,19.0544,False,False,False,False,False,False
 idn-sorong,SORONG,IDN,-0.8631,131.2185,False,False,False,False,False,False
 som-berbera,BERBERA,SOM,10.4465,44.9558,False,False,False,False,False,False
 usa-usa-1674,,USA,38.8595,-75.0997,False,False,False,False,False,False
-tun-sousse,SOUSSE,TUN,35.8467,10.7011,False,False,False,False,False,False
 jpn-ishikari,ISHIKARI,JPN,43.2368,141.2549,False,False,False,False,False,False
-idn-baubau,BAU BAU,IDN,-5.4439,122.5796,False,False,False,False,False,False
-jpn-tsuruga,TSURUGA,JPN,35.7113,136.0635,False,False,False,False,False,False
 slb-honiara,HONIARA,SLB,-9.4124,159.976,False,False,False,False,False,False
 som-mogadishu,MOGADISHU,SOM,2.011,45.3481,False,False,False,False,False,False
 aus-esperanceaus,,AUS,-33.8872,121.9388,False,False,False,False,False,False
@@ -500,7 +485,6 @@ prt-praiadavitoria,PRAIA DA VITORIA,PRT,38.7171,-27.0364,False,False,False,False
 esp-esp-269,ESP-269,ESP,42.5447,-8.8998,False,False,False,False,False,False
 idn-jayapura,JAYAPURA,IDN,-2.5455,140.7382,False,False,False,False,False,False
 syc-portvictoria,PORT VICTORIA,SYC,-4.581,55.4884,False,False,False,False,False,False
-chn-chn-2374,CHN-2374,CHN,24.472,118.565,False,False,False,False,False,False
 guf-degraddescannes,DEGRAD DES CANNES,GUF,4.8533,-52.2743,False,False,False,False,False,False
 idn-kupang,KUPANG,IDN,-10.1763,123.513,False,False,False,False,False,False
 ago-lobito,LOBITO,AGO,-12.2709,13.5869,False,False,False,False,False,False
@@ -514,7 +498,6 @@ pyf-papeete,PAPEETE,PYF,-17.5323,-149.5783,False,False,False,False,False,False
 usa-anchorage,ANCHORAGE,USA,61.2248,-149.9095,False,False,False,False,False,False
 dom-puertoplata,PUERTO PLATA,DOM,19.8012,-70.6983,False,False,False,False,False,False
 usa-gulfport,GULFPORT,USA,30.3494,-89.0882,False,False,False,False,False,False
-isl-reydarfjordur,REYDARFJORDUR,ISL,65.0272,-14.1143,False,False,False,False,False,False
 com-moroni,MORONI,COM,-11.6987,43.2467,False,False,False,False,False,False
 ind-ind-103,IND-103,IND,8.376,76.9889,False,False,False,False,False,False
 asm-pagopagoharbor,PAGO PAGO HARBOR,ASM,-14.2797,-170.6749,False,False,False,False,False,False
@@ -535,10 +518,8 @@ esp-lapalma,LA PALMA,ESP,28.6738,-17.767,False,False,False,False,False,False
 pan-almirante,ALMIRANTE,PAN,9.288,-82.391,False,False,False,False,False,False
 mhl-majuro,MAJURO,MHL,7.1276,171.3089,False,False,False,False,False,False
 vut-portvila,PORT VILA,VUT,-17.7561,168.2969,False,False,False,False,False,False
-isl-vestmannaeyjar,VESTMANNAEYJAR,ISL,63.4453,-20.2718,False,False,False,False,False,False
 can-argentia,ARGENTIA,CAN,47.2957,-53.9841,False,False,False,False,False,False
 gnb-bissau,BISSAU,GNB,11.7749,-15.6024,False,False,False,False,False,False
-idn-nabire,,IDN,-3.23,135.5696,False,False,False,False,False,False
 hti-caphaitien,CAP HAITIEN,HTI,19.7588,-72.1934,False,False,False,False,False,False
 blz-blz-4,BLZ-4,BLZ,16.4608,-88.3844,False,False,False,False,False,False
 idn-ternate,TERNATE,IDN,0.7828,127.3955,False,False,False,False,False,False
@@ -548,16 +529,14 @@ can-can-344,CAN-344,CAN,48.9641,-58.0192,False,False,False,False,False,False
 fsm-pohnpei,POHNPEI,FSM,6.9924,158.1693,False,False,False,False,False,False
 per-chancay,CHANCAY,PER,-11.5759,-77.2786,False,False,False,False,False,False
 hkg-hongkong,HONG KONG,HKG,22.2685,114.1184,False,False,False,False,False,False
-mdg-mdg-10,,MDG,-25.0652,46.9661,False,False,False,False,False,False
-plw-melekeok,MELEKEOK,PLW,7.3371,134.4393,False,False,False,False,False,False
 mex-puertomadero,PUERTO MADERO,MEX,14.7094,-92.4019,False,False,False,False,False,False
 arg-ushuaia,USHUAIA,ARG,-54.8086,-68.2701,False,False,False,False,False,False
 idn-idn-328,,IDN,-1.2097,122.6299,False,False,False,False,False,False
 tza-mtwara,MTWARA,TZA,-10.2565,40.2045,False,False,False,False,False,False
-fsm-kosrae,KOSRAE,FSM,5.3502,162.9567,False,False,False,False,False,False
 usa-usa-659,,USA,33.8759,-78.0005,False,False,False,False,False,False
 idn-wini,WINI,IDN,-9.1773,124.4925,False,False,False,False,False,False
 irn-isoico,,IRN,27.0489,55.9759,False,False,False,False,False,False
+grc-grc-282,GRC-282,GRC,35.5026,24.1772,False,False,False,False,False,False
 arg-sanantonioeste,SAN ANTONIO ESTE,ARG,-40.7967,-64.8884,False,False,False,False,False,False
 gbr-thames,THAMES,GBR,51.5041,0.5026,False,False,False,False,False,False
 ind-ind-76,IND-76,IND,21.7847,72.1412,False,False,False,False,False,False
